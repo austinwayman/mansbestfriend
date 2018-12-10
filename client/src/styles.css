@@ -1,0 +1,29 @@
+.jumbotron {
+    background-image: url("/images/jumbotronBackground.jpg");
+    box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.5);
+    height: 400px;
+}
+.jumbotron2 .title {
+    text-align: center;
+    margin-top: 10%;
+}
+.title {
+    height: 750px;
+    text-align: center;
+}
+.titletext {
+    margin-top: 20%;
+}
+#navbarthick {
+    margin: 0;
+    position: absolute;
+    padding-left: 60px;
+    padding-right: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.nav-link {
+    padding-left: 60px;
+    padding-right: 60px;
+    width: 200px;
+}
