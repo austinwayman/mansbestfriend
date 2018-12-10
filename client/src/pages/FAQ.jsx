@@ -1,6 +1,7 @@
 import React from 'react';
 import Jumbotron2 from "../components/Jumbotron2";
 import Nav2 from "../components/Nav";
+import FAQinfo from "../components/FAQinfo"
 
 
 class FAQ extends React.Component {
@@ -19,9 +20,12 @@ class FAQ extends React.Component {
       }
       render () {
           return (
+              <div>
               <Jumbotron2>
                   <Nav2 />
               </Jumbotron2>
+              <FAQinfo />
+              </div>
           )
       }
 }
