@@ -1,68 +1,41 @@
 import React, { Component } from 'react';
-import { Jumbotron,  Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import { Jumbotron, Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import ForumPage from "./pages/ForumStarting"
+import Forum from "./pages/Forum"
+import Post from "./pages/Posting"
+import Home from "./pages/Home";
+import Faq from "./pages/FAQ";
+import VetFinder from "./pages/VetFinder";
+import LostAndFound from "./pages/LostAndFound";
+import CareAndWellness from "./pages/CareAndWellness";
+import NoMatch from "./pages/NoMatch";
 
 
 class App extends Component {
-  constructor(props) {
-    super(props);
 
-    this.toggle = this.toggle.bind(this);
-    this.state = {
-      isOpen: false
-    };
-  }
-  toggle() {
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
-  }
   render() {
     return (
-      <div className="App">
-        <Jumbotron>
+      <Router>
         <div>
-        <Navbar color="light" light expand="md">
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink href="/components/">Forum</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/components/">FAQs</NavLink>
-              </NavItem>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Care & Wellness
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>
-                    Option 1
-                  </DropdownItem>
-                  <DropdownItem>
-                    Option 2
-                  </DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>
-                    Reset
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
-              <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">VetFinder</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/components/">Lost/Found</NavLink>
-              </NavItem>
-             
-            </Nav>
-          </Collapse>
-        </Navbar>
-      </div>
-          <h1 className="display-3">Hello World</h1>
-          <p className="lead">This is my website. What up?</p>
-        </Jumbotron>
-      </div>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/forum" component={ForumPage} />
+          <Route exact path="/forum/:animal" component={Forum} />
+          <Route exact path="/posts/:postID" component={Post} />
+  
+          <Route exact path="/faq" component={Faq} />
+          {/* <Route exact path="/lostandfound" component={LostAndFound} /> */}
+          {/* <Route exact path="/careandwellness" component={CareAndWellness} /> */}
+          {/* <Route exact path="/vetfinder" component={VetFinder} /> */}
+          <Route component={NoMatch} />
+        </Switch>
+       
+      
+        
+
+        </div>
+      </Router>
     );
   }
 }

@@ -1,9 +1,8 @@
-import React from 'react';
-import { Jumbotron,  Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
-import "../../src/styles.css";
+import React, { Component } from 'react';
+import { Jumbotron,  Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 
 
-class Home extends React.Component {
+class App extends Component {
   constructor(props) {
     super(props);
 
@@ -20,22 +19,19 @@ class Home extends React.Component {
   render() {
     return (
       <div className="App">
-        <Jumbotron className="jumbotron title">
-        <div className="display-flex justify-content-center">
-         <Navbar id="navbarthick" color="light" light expand="md">
+        <Jumbotron>
+        <div>
+        <Navbar color="light" light expand="md">
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-
-              <NavItem className="nav-item2">
-                <NavLink href="/Forum/">Forum</NavLink>
+              <NavItem>
+                <NavLink href="/components/">Forum</NavLink>
               </NavItem>
-
-              <NavItem className="nav-item2">
-                <NavLink href="/FAQ/">FAQs</NavLink>
+              <NavItem>
+                <NavLink href="/components/">FAQs</NavLink>
               </NavItem>
-
-              <UncontrolledDropdown nav inNavbar className="nav-item2">
+              <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
                   Care & Wellness
                 </DropdownToggle>
@@ -52,28 +48,23 @@ class Home extends React.Component {
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
-
-              <NavItem className="nav-item2">
+              <NavItem>
                 <NavLink href="https://github.com/reactstrap/reactstrap">VetFinder</NavLink>
               </NavItem>
-
-              <NavItem className="nav-item2">
-                <NavLink href="/LostAndFound/">Lost/Found</NavLink>
+              <NavItem>
+                <NavLink href="/components/">Lost/Found</NavLink>
               </NavItem>
              
             </Nav>
           </Collapse>
         </Navbar>
-
       </div>
-        <div className="titletext">
           <h1 className="display-3">Hello World</h1>
-          <p className="lead">This is my website.</p>
-        </div>
+          <p className="lead">This is my website. What up?</p>
         </Jumbotron>
       </div>
     );
   }
 }
 
-export default Home;
+export default App;
