@@ -54,7 +54,7 @@ class Home extends React.Component {
               </UncontrolledDropdown>
 
               <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">VetFinder</NavLink>
+                <NavLink href="/VetFinder/">VetFinder</NavLink>
               </NavItem>
 
               <NavItem>
