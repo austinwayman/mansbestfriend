@@ -21,11 +21,12 @@ class FAQ extends React.Component {
       render () {
           return (
               <div>
-              <Jumbotron2>
+               <Jumbotron2 page={"FAQs"} other={"this is the FAQ page"} >
                   <Nav2 />
               </Jumbotron2>
               <FAQinfo />
               </div>
+              
           )
       }
 }
