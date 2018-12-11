@@ -14,13 +14,6 @@ export default {
       return axios.post("/api/threads", postObj)
   },
 
-  getLostAnimals: function(query) {
-    return axios.get("/lostanimals" + query)
-  },
-
-  postLostAnimal: function(postObj) {
-    return axios.post("/api/lostanimals" + postObj)
-  }
 
 };
 
