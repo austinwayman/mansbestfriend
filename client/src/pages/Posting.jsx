@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import API from "../utils/API";
 import Posting from "../components/Posting/posting"
 import CommentCard from "../components/CommentCard/commentcard"
-import CommentCard2 from "../components/CommentCard2/commentcard2"
-import CommentCard3 from "../components/CommentCard3/CommentCard3"
 import Input from "../components/Input/Input"
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
@@ -14,16 +12,7 @@ class Post extends Component {
         name: "",
         comment: "",
         modalID : "",
-        route: "",
-
-        // modal2: false,
-        name2: "",
-        comment2: "",
-      
-        // modal3: false,
-        name3: "",
-        comment3: ""
-    
+        route: ""
     }
 
     componentWillMount() {
@@ -36,8 +25,6 @@ class Post extends Component {
             .then(result => this.setState({ selected: [result.data], modal: false }))
 
     }
-
-    // , modal2: false, modal3: false 
 
     toggle = (route) => {
 
@@ -55,7 +42,20 @@ class Post extends Component {
 
     }
     
-
+    handleNameChange = (event) => {
+        const { name, value } = event.target;
+        this.setState({
+            [name]: value
+        });
+    }
+    
+    handleCommentChange = (event) => {
+        const { name, value } = event.target;
+        this.setState({
+            [name]: value
+        });
+    }
+    
     handleSubmit = () => {
         const obj = {
             name: this.state.name,
@@ -64,133 +64,6 @@ class Post extends Component {
         API.postComment(this.state.route, obj, this.state.modalID).then(res => this.getPost())
 
     }
-
-    // toggle2 = () => {
-    //     this.setState({
-    //         modal2: !this.state.modal2
-    //     });
-    // }
-
-    // toggle3 = () => {
-    //     this.setState({
-    //         modal3: !this.state.modal3
-    //     });
-    // }
-
-    /* Comment Level 1 */
-    handleNameChange = (event) => {
-        const { name, value } = event.target;
-        this.setState({
-            [name]: value
-        });
-    }
-
-    handleCommentChange = (event) => {
-        const { name, value } = event.target;
-        this.setState({
-            [name]: value
-        });
-    }
-
-    handleCommentSubmit = event => {
-        event.preventDefault();
-
-        const { value } = event.target
-
-        this.newComment = {
-            name: this.state.name,
-            comment: this.state.comment
-        }
-
-        API.postCommentLv1(this.newComment, value)
-            .then(res => this.getPost())
-
-    }
-
-
-    /* End Comment Level 1 */
-
-    /* Comment Level 2 */
-
-    handleName2Change = (event) => {
-        const { name, value } = event.target;
-        this.setState({
-            [name]: value
-
-        });
-    }
-
-    handleComment2Change = (event) => {
-        const { name, value } = event.target;
-        this.setState({
-            [name]: value
-        });
-    }
-
-    handleComment2Submit = id => {
-        console.log(id)
-
-        const newComment = {
-            name: this.state.name2,
-            comment: this.state.comment2
-        }
-
-        API.postCommentLv2(newComment, id)
-            .then(res => this.getPost())
-
-    }
-
-    // updateID = (event) => {
-
-    //     const {value} = event.target
-
-    //     this.setState({modalID: value})
-
-    //     console.log("MODALID =" + this.state.modalID)
-
-    // }
-
-
-    /* End Comment Level 2 */
-
-    /* Comment Level 3 */
-
-    handleName3Change = (event) => {
-        const { name, value } = event.target;
-        this.setState({
-            [name]: value
-        });
-    }
-
-    handleComment3Change = (event) => {
-        const { name, value } = event.target;
-        this.setState({
-            [name]: value
-        });
-    }
-
-    handleComment3Submit = event => {
-        event.preventDefault();
-
-        const { value } = event.target
-        console.log(value)
-
-        this.newComment = {
-            name: this.state.name3,
-            comment: this.state.comment3
-        }
-
-        API.postCommentLv3(this.newComment, value)
-            .then(res => this.getPost())
-
-    }
-
-
-
-
-
-    /* End Comment Level 3 */
-
 
     render() {
 

@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import API from "../utils/API";
-import { Button, Modal, Form, FormGroup, Label, ModalHeader, ModalBody, ModalFooter, FormText, Input, Container, Row, Col} from 'reactstrap';
+import { Button, Modal, Form, FormGroup, Label, ModalHeader, ModalBody, ModalFooter, Input, Container, Row, Col} from 'reactstrap';
 import Card from "../components/PostCards/PostCards"
-import Input2 from "../components/Input/Input"
 import ThreadAddBtn from "../components/ThreadAddBtn/ThreadAddBtn"
 
 

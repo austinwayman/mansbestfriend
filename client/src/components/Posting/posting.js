@@ -1,6 +1,6 @@
 import React from "react";
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import Input from "../Input/Input"
+import { Button} from 'reactstrap';
+
 
 
 
@@ -19,26 +19,7 @@ export function Posting(props) {
                 </div>
             </div>
 
-            {/* <Modal isOpen={props.modal}>
-                        <ModalHeader>Add Reply</ModalHeader>
-                        <ModalBody>
-                            <Input name="name" value = {props.nameVal} onChange = {props.handleNameChange} placeholder="Name" />
-                            <Input name="comment" value = {props.commentVal} onChange = {props.handleCommentChange} placeholder="Comment" />
-                            </ModalBody>
-                        <ModalFooter>
-                            <Button value = {props.id} color="primary" onClick={props.handleCommentSubmit}>Post Comment</Button>{' '}
-                            <Button color="secondary" onClick={props.toggle}>Cancel</Button>
-                        </ModalFooter>
-                    </Modal> */}
-
-
-
-
-
         </div>
-
-
-
 
     );
 }
