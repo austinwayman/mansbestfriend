@@ -20,6 +20,7 @@ export default {
 
   postComment: function(route, postObj, id){
     return axios.post("/api/" + route + id, postObj);
+
   }
 
 };
