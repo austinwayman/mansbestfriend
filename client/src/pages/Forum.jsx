@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import API from "../utils/API";
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Button, Modal, Form, FormGroup, Label, ModalHeader, ModalBody, ModalFooter, FormText, Input, Container, Row, Col} from 'reactstrap';
 import Card from "../components/PostCards/PostCards"
-import Input from "../components/Input/Input"
+import Input2 from "../components/Input/Input"
 import ThreadAddBtn from "../components/ThreadAddBtn/ThreadAddBtn"
 
 
@@ -16,7 +16,7 @@ class Forum extends Component {
         content: ""
     }
 
-    
+
     componentWillMount() {
         this.getFirstPosts()
     }
@@ -24,58 +24,112 @@ class Forum extends Component {
     handleTitleChange = (event) => {
         const { name, value } = event.target;
         this.setState({
-          [name]: value
-        }); 
+            [name]: value
+        });
     }
 
     handleCategoryChange = (event) => {
         const { name, value } = event.target;
         this.setState({
-          [name]: value
-        }); 
+            [name]: value
+        });
     }
-    
+
     handleAnimalChange = (event) => {
         const { name, value } = event.target;
         this.setState({
-          [name]: value
-        }); 
+            [name]: value
+        });
     }
 
     handleContentChange = (event) => {
         const { name, value } = event.target;
         this.setState({
-          [name]: value
-        }); 
+            [name]: value
+        });
     }
 
     handleThreadSubmit = event => {
-    
+
         event.preventDefault();
 
-        this.newPost = {title : this.state.title, 
+        this.newPost = {
+            title: this.state.title,
             category: this.state.category,
-             animal: this.state.animal, 
-             content: this.state.content}
+            animal: this.state.animal,
+            content: this.state.content
+        }
 
         API.postThread(this.newPost)
-          .then(res => this.getFirstPosts())
-          .catch(err => console.log(err));
-      };
-    
-    
-    
+            .then(res => this.getFirstPosts())
+            .catch(err => console.log(err));
+    };
+
+
+
     getFirstPosts = () => {
-        
-        API.animalPosts(this.props.match.params.animal).then(result => this.setState({ posts: result.data, modal:false }));
-        
+
+        API.animalInitialPosts(this.props.match.params.animal).then(result => this.setState({ posts: result.data, modal: false }));
+
     }
-    
+
     toggle = () => {
         this.setState({
             modal: !this.state.modal
         });
     }
+
+    /* button navs */
+
+    petTraining = (event) => {
+        const {value} = event.target
+   
+
+        API.animalChosenPost(this.props.match.params.animal, value)
+        .then(result => this.setState({posts : result.data, modal: false}))
+        
+    }
+
+    breeding = (event) => {
+
+        const {value} = event.target
+   
+
+        API.animalChosenPost(this.props.match.params.animal, value)
+        .then(result => this.setState({posts : result.data, modal: false}))
+
+
+    }
+
+    healthAndNut = (event) => {
+
+        const {value} = event.target
+        API.animalChosenPost(this.props.match.params.animal, value)
+        .then(result => this.setState({posts : result.data, modal: false}))
+
+    }
+
+    rescueAndAdop = (event) => {
+
+        const {value} = event.target
+        API.animalChosenPost(this.props.match.params.animal, value)
+        .then(result => this.setState({posts : result.data, modal: false}))
+
+    }
+
+    showsAndEvents = (event) => {
+
+        const {value} = event.target
+        API.animalChosenPost(this.props.match.params.animal, value)
+        .then(result => this.setState({posts : result.data, modal: false}))
+
+    }
+
+
+    /* end button navs */
+
+
+
 
     render() {
 
@@ -84,19 +138,41 @@ class Forum extends Component {
             <div>
 
                 {console.log(this.state.posts)}
-              
+
                 <ThreadAddBtn toggle={this.toggle} />
 
                 <div>
                     <Modal isOpen={this.state.modal} toggle={this.toggle}>
                         <ModalHeader>Add Thread</ModalHeader>
                         <ModalBody>
-                            <Input name="title" value = {this.state.title} onChange = {this.handleTitleChange} placeholder="Title Of Your Thread" />
-                            <Input name="category" value = {this.state.category} onChange = {this.handleCategoryChange} placeholder="Category Of Your Thread" />
-                            <Input name="animal" value = {this.state.animal} onChange = {this.handleAnimalChange} placeholder="Type of Animal" />
-                            <Input name="content" value = {this.state.content} onChange = {this.handleContentChange} placeholder="Content" />
-                           
-                            </ModalBody>
+                            <Form>
+                                <FormGroup>
+                                    <Label for="title">Title of Thread : </Label>
+                                    <Input name="title" value={this.state.title} onChange={this.handleTitleChange} placeholder="Title Of Your Thread" />
+                                </FormGroup>
+                                <FormGroup>
+                                    <Label for="category">Category</Label>
+                                    <Input type="select" id="exampleSelect" name="category" value = {this.state.category} onChange = {this.handleCategoryChange} placeholder="Category Of Your Thread">
+                                        <option>Health and Nutrition</option>
+                                        <option>Pet Training</option>
+                                        <option>Breeding</option>
+                                        <option>Rescue & Adoption</option>
+                                        <option>Shows & Events</option>
+                                    </Input>
+                                </FormGroup>
+                                <FormGroup>
+                                    <Label for="category">Animal</Label>
+                                    <Input type="select" id="exampleSelect" name="animal" value = {this.state.animal} onChange = {this.handleAnimalChange} placeholder="Type of Animal">
+                                        <option>cats</option>
+                                        <option>dogs</option>
+                                    </Input>
+                                </FormGroup>
+                                <FormGroup>
+                                    <Label for="category">Content</Label>
+                                    <Input name="content" value = {this.state.content} onChange = {this.handleContentChange} placeholder="Content"/>       
+                                </FormGroup>
+                            </Form>
+                        </ModalBody>
                         <ModalFooter>
                             <Button color="primary" onClick={this.handleThreadSubmit}>Post Thread</Button>{' '}
                             <Button color="secondary" onClick={this.toggle}>Cancel</Button>
@@ -104,8 +180,18 @@ class Forum extends Component {
                     </Modal>
                 </div>
 
+                <Container>
+                    <Row>
+                        <Col xl="6">
+                            <p><Button color="secondary" value = "Health and Nutrition" onClick={this.healthAndNut}>Health and Nutrition</Button></p>
+                            <p><Button color="secondary" value = "Pet Training" onClick={this.petTraining}>Pet Training</Button></p>
+                            <p><Button color="secondary" value = "Breeding" onClick={this.breeding}>Breeding</Button></p>
+                            <p><Button color="secondary" value = "Rescue & Adoption" onClick={this.rescueAndAdop}>Rescue & Adoption</Button></p>
+                            <p><Button color="secondary" value = "Shows & Events" onClick={this.showsAndEvents}>Shows & Events</Button></p>
 
-
+                        </Col>
+                        <Col xl="6">
+                        
                 {
 
                     this.state.posts.map(post => {
@@ -116,6 +202,16 @@ class Forum extends Component {
                     })
 
                 }
+                        
+                        </Col>
+                    </Row>
+                </Container>
+
+
+                
+
+
+
 
             </div>
 
