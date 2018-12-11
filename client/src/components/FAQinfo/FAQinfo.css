@@ -5,13 +5,15 @@
 .header {
     color: chocolate; 
     font-size: 45px; 
-    font-weight: bold; 
+    /* font-weight: bold;  */
     text-align: center; 
    
 }
 
 .question {
     color:#007bff;
+    color: #093e73; 
+    font-weight: bold; 
     font-size: 20px; 
     text-align: left; 
     padding-top: 15px; 
