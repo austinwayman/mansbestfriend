@@ -2,8 +2,12 @@ import axios from "axios";
 
 
 export default {
-  animalPosts: function(query) {
+  animalInitialPosts: function(query) {
     return axios.get("/forum/" + query);
+  },
+
+  animalChosenPost: function (animal, category){
+    return axios.get("/forum/" + animal + "/" + category)
   },
 
   getThisPost: function(query){
@@ -14,6 +18,10 @@ export default {
       return axios.post("/api/threads", postObj)
   },
 
+  postComment: function(route, postObj, id){
+    return axios.post("/api/" + route + id, postObj);
+
+  }
 
 };
 
