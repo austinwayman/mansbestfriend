@@ -36,7 +36,7 @@ function Nav2() {
         </UncontrolledDropdown>
 
         <NavItem>
-          <NavLink href="https://github.com/reactstrap/reactstrap">VetFinder</NavLink>
+          <NavLink href="/vetfinder/">VetFinder</NavLink>
         </NavItem>
 
         <NavItem>
