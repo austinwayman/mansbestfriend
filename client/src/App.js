@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Jumbotron, Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ForumPage from "./pages/ForumStarting"
 import Forum from "./pages/Forum"
@@ -23,8 +23,8 @@ class App extends Component {
           <Route exact path="/forum" component={ForumPage} />
           <Route exact path="/forum/:animal" component={Forum} />
           <Route exact path="/posts/:postID" component={Post} />
-          {/* <Route exact path="/vetfinder" component={VetFinder} />
-          <Route exact path="/lostandfound" component={LostandFound} /> */}
+          <Route exact path="/vetfinder" component={VetFinder} />
+          <Route exact path="/lostandfound" component={LostAndFound} />
           <Route exact path="/faq" component={Faq} />
           <Route component={NoMatch} />
         </Switch>
