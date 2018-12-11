@@ -21,7 +21,8 @@ class Lost extends Component {
 
     getAllLost = () => {
         API.getLostAnimals(this.props.match.params.name).then (
-            result => this.setState({list: result.data})
+            result => this.setState({list: result.data}),
+            console.log(this.state)
         )
     }
     constructor(props) {

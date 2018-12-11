@@ -29,8 +29,6 @@ router.post("/threads", function (req, res) {
 
 
 
-
-
 router.post("/Comment1/:id", function (req, res) {
 
 
