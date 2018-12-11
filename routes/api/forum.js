@@ -42,7 +42,7 @@ router.post("/Comment1/:id", function (req, res) {
         })
         .then(function (result) {
 
-            console.log("working")
+            res.json(result)
         })
 
 });
@@ -58,7 +58,7 @@ router.post("/Comment2/:id", function (req, res) {
         })
         .then(function (result) {
 
-            console.log("working")
+            res.json(result)
         })
 
 });
@@ -74,7 +74,7 @@ router.post("/Comment3/:id", function (req, res) {
         })
         .then(function (result) {
 
-            console.log("working")
+            res.json(result)
         })
 
 });
