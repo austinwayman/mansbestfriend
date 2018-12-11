@@ -20,8 +20,4 @@ function NoMatch() {
   );
 }
 
-<<<<<<< HEAD
 export default NoMatch;
-=======
-export default NoMatch;
->>>>>>> master
