@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 import { Col, Row, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
@@ -11,7 +11,7 @@ export function LostDogForm(props) {
           <Col md={6}>
             <FormGroup>
               <Label for="dogName">Dog Name</Label>
-              <Input type="email" name="animal" id="dogName" placeholder="Animals Name" />
+              <Input type="text" name="animal" id="animalName" placeholder="Animals Name" />
             </FormGroup>
           </Col>
           <Col md={6}>
