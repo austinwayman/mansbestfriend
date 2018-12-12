@@ -87,7 +87,39 @@ class Home extends React.Component {
           </div>
           {/* Jumbotron Text End */}
         </Jumbotron>
+        {/* End of Jumbotron */}
+
+        {/* Start of Purpose */}
+      <div className="purposeContainer">
+        <Container>
+          <Row>
+            <Col m="4" xl="4">
+              <h1>Purpose</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum eaque totam dolore necessitatibus voluptatem provident repellendus porro tempore libero pariatur ratione fugiat minima officia unde architecto, impedit quasi corrupti dicta?</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi et maiores cupiditate perferendis quo, molestiae laborum. Consequuntur laboriosam architecto, itaque nesciunt quam dignissimos sit eius, adipisci harum quaerat ipsam quibusdam!</p>
+            </Col>
+            <Col m="8" xl="8"><img src="/images/cat.png" alt="petimage" width="100%"></img></Col>
+          </Row>
+        </Container>
       </div>
+      {/* End of Purpose */}
+
+
+      {/* Footer Start */}
+      <div className="footer">
+        <Row>
+          <Col id="footerText">
+          FAAT Industries
+          </Col>
+        </Row>
+      </div>
+
+
+
+
+
+      </div>
+
     );
   }
 }
