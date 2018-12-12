@@ -4,7 +4,6 @@ import { Button, Modal, Form, FormGroup, Label, ModalHeader, ModalBody, ModalFoo
 import Card from "../components/PostCards/PostCards"
 import ThreadAddBtn from "../components/ThreadAddBtn/ThreadAddBtn"
 import Jumbotron2 from "../components/Jumbotron2";
-import Nav2 from "../components/Nav";
 
 
 class Forum extends Component {

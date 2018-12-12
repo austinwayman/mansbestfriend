@@ -35,6 +35,7 @@ class Lost extends Component {
               <div>
               <Jumbotron2 page={"Lost & Found"} other={"Find or Post a missing loved one."} />
                 <LostDogForm/>
+                
               </div>   
           )
       }
