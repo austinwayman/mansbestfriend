@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import LostDogCard from "../components/LostDogCard/dogCard"
 import LostDogForm from "../components/LostDogForm/LostForm"
 import ThreadAddBtn from "../components/ThreadAddBtn/ThreadAddBtn"
-import API from "../utils/API";
+import API from "../utils/lostAPI";
 import Jumbotron2 from "../components/Jumbotron2";
 
 class Lost extends Component {
@@ -32,7 +32,11 @@ class Lost extends Component {
 
       render () {
           return (
-              <Jumbotron2 page={"Lost & Found"} other={"Find or Post a missing loved one."} />   
+              <div>
+              <Jumbotron2 page={"Lost & Found"} other={"Find or Post a missing loved one."} />
+                <LostDogForm/>
+                
+              </div>   
           )
       }
 }
