@@ -67,8 +67,8 @@ class Home extends React.Component {
 
       </div>
         <div className="titletext">
-          <h1 className="display-3">Hello World</h1>
-          <p className="lead">This is my website.</p>
+          <h1 className="display-3">Man's Best Friend</h1>
+          <p className="lead">animal care for animal lovers</p>
         </div>
         </Jumbotron>
       </div>
