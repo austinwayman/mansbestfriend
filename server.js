@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const express = require("express");
 // const path = require("path")
 // const axios = require("axios");
@@ -21,8 +23,6 @@ const databaseURL = process.env.MONGODB_URI || "mongodb://localhost/forumdb";
 mongoose.connect(databaseURL, { useNewUrlParser: true }, () => console.log("connection to mongodb"));
 mongoose.Promise = Promise;
 
-// app.use("/api", apiRoutes);
-
 app.use(routes)
 
 // Add routes, both API and view
@@ -31,6 +31,12 @@ app.use(routes)
 //   res.sendFile(path.join(__dirname, "./client/public/index.html"));
 // });
 // Connect to the Mongo DB
+
+
+// Passport
+
+const passport = require("passport");
+require("./services/passport");
 
 
 

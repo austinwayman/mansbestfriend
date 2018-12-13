@@ -40,6 +40,7 @@ class Lost extends Component {
               <Button outline color="info">Add a Lost or Found Pet</Button>{' '}
               </div>
                 <LostDogForm/>
+                
               </div>   
           )
       }
