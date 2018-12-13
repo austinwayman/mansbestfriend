@@ -82,9 +82,13 @@ class Forum extends Component {
 
     toggle = () => {
 
-        console.log(axios.defaults.headers.common.authorization);
+        // console.log(axios.defaults.headers.common.authorization);
 
-        API.checkAuth(axios.defaults.headers.common.authorization)
+        const token = localStorage.getItem("userToken")
+        console.log(token)
+
+
+        API.checkAuth(token)
             .then(result => {
                 this.setState({
                     modal: !this.state.modal
