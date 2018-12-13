@@ -10,6 +10,8 @@ import VetFinder from "./pages/VetFinder";
 import LostAndFound from "./pages/LostAndFound";
 import CareAndWellness from "./pages/CareAndWellness";
 import NoMatch from "./pages/NoMatch";
+import SignUpIn from "./pages/SignIn"
+
 
 
 class App extends Component {
@@ -23,7 +25,8 @@ class App extends Component {
           <Route exact path="/forum" component={ForumPage} />
           <Route exact path="/forum/:animal" component={Forum} />
           <Route exact path="/posts/:postID" component={Post} />
-  
+          <Route exact path="/login-sign" component={SignUpIn} />
+
           <Route exact path="/faq" component={Faq} />
           {/* <Route exact path="/lostandfound" component={LostAndFound} /> */}
           {/* <Route exact path="/careandwellness" component={CareAndWellness} /> */}
