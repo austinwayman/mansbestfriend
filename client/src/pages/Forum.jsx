@@ -4,6 +4,7 @@ import { Button, Modal, Form, FormGroup, Label, ModalHeader, ModalBody, ModalFoo
 import Card from "../components/PostCards/PostCards"
 import ThreadAddBtn from "../components/ThreadAddBtn/ThreadAddBtn"
 import Jumbotron2 from "../components/Jumbotron2";
+import axios from 'axios'
 
 
 class Forum extends Component {
@@ -81,19 +82,19 @@ class Forum extends Component {
 
     toggle = () => {
 
-        API.checkAuth()
-            .then(result => { console.log(result) })
+        console.log(axios.defaults.headers.common.authorization);
+
+        API.checkAuth(axios.defaults.headers.common.authorization)
+            .then(result => {
+                this.setState({
+                    modal: !this.state.modal
+                })
+            })
             .catch(err => {
 
                 if (err.response.status === 401) {
 
                     this.props.history.push("/login-sign")
-                }
-
-                else {
-                    this.setState({
-                        modal: !this.state.modal
-                    })
                 }
 
 
@@ -154,6 +155,7 @@ class Forum extends Component {
 
 
     render() {
+        console.log(axios.defaults.headers.common);
 
         return (
 

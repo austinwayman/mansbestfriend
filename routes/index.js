@@ -1,7 +1,7 @@
 const router = require("express").Router();
 
 router.use("/v1", require("./v1"));
-router.use("/api", require("./api"))
+// router.use("/api", require("./api"))
 router.use(require("./forumInitial"))
 
 module.exports = router;
