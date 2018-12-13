@@ -3,8 +3,8 @@ const express = require("express");
 // const axios = require("axios");
 const mongoose = require("mongoose");
 // const db = require("./models")
-const apiRoutes = require("./routes/api/forum");
-const routes = require("./routes/forumInitial")
+const routes = require("./routes");
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -21,7 +21,7 @@ const databaseURL = process.env.MONGODB_URI || "mongodb://localhost/forumdb";
 mongoose.connect(databaseURL, { useNewUrlParser: true }, () => console.log("connection to mongodb"));
 mongoose.Promise = Promise;
 
-app.use("/api", apiRoutes);
+// app.use("/api", apiRoutes);
 
 app.use(routes)
 

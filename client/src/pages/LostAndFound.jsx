@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Button, Modal, Form, FormGroup, Label, ModalHeader, ModalBody, ModalFooter, Input, Container, Row, Col} from 'reactstrap';
 
 import LostDogCard from "../components/LostDogCard/dogCard"
 import LostDogForm from "../components/LostDogForm/LostForm"
@@ -11,8 +12,9 @@ class Lost extends Component {
         list: [],
         name: "",
         breed: "",
+        description: "",
         image: "",
-        description: ""
+        contact: ""
     }
 
     componentDidMount() {
@@ -34,6 +36,9 @@ class Lost extends Component {
           return (
               <div>
               <Jumbotron2 page={"Lost & Found"} other={"Find or Post a missing loved one."} />
+              <div classname="d-flex justify-items-center" style={{textAlign: "center"}}>
+              <Button outline color="info">Add a Lost or Found Pet</Button>{' '}
+              </div>
                 <LostDogForm/>
               </div>   
           )
