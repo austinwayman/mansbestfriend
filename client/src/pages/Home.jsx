@@ -1,6 +1,7 @@
 import React from 'react';
 import { Jumbotron, Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem, Col, Row, Container } from 'reactstrap';
 import "../../src/styles.css";
+import { Link } from "react-router-dom";
 
 
 class Home extends React.Component {
@@ -37,7 +38,7 @@ class Home extends React.Component {
                 <Nav className="ml-auto" navbar>
 
                   <NavItem className="nav-item2">
-                    <NavLink href="/Forum/">Forum</NavLink>
+                    <Link to="/Forum">Forum</Link>
                   </NavItem>
 
                   <NavItem className="nav-item2">

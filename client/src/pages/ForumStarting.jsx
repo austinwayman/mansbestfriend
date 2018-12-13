@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Jumbotron2 from "../components/Jumbotron2";
+import { Link } from "react-router-dom";
 
 
 class ForumPage extends Component {
@@ -13,22 +14,22 @@ class ForumPage extends Component {
             <div className="container">
             <div className="row">
                 <div className="col col-xl-6">
-                <a href="/forum/dogs">
+                <Link to="/forum/dogs">
                     <div className="card">
                         <div className="card-body">
                             Dogs
                         </div>
                     </div>
-                </a>
+                </Link>
                 </div>
                 <div className="col col-xl-6">
-                <a href="/forum/cats">
+                <Link to="/forum/cats">
                     <div className="card">
                         <div className="card-body">
                             Cats
                         </div>
                     </div>
-                </a>
+                </Link>
                 </div>
             </div>
         </div>
