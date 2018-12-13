@@ -32,6 +32,7 @@ export default {
 
   checkAuth: function (){
     return axios.get("/v1/protected")
+
   }
 
 };

@@ -3,6 +3,7 @@ import API from "../utils/API";
 import { Button, Modal, Form, FormGroup, Label, ModalHeader, ModalBody, ModalFooter, Input, Container, Row, Col } from 'reactstrap';
 import Card from "../components/PostCards/PostCards"
 import ThreadAddBtn from "../components/ThreadAddBtn/ThreadAddBtn"
+import Jumbotron2 from "../components/Jumbotron2";
 
 
 class Forum extends Component {
@@ -14,7 +15,6 @@ class Forum extends Component {
         animal: "",
         content: ""
     }
-
 
     componentWillMount() {
         this.getFirstPosts()
@@ -73,6 +73,10 @@ class Forum extends Component {
 
         API.animalInitialPosts(this.props.match.params.animal).then(result => this.setState({ posts: result.data, modal: false }));
 
+    }
+
+    Capitalize(str) {
+        return str.charAt(0).toUpperCase() + str.slice(1);
     }
 
     toggle = () => {
@@ -154,6 +158,8 @@ class Forum extends Component {
         return (
 
             <div>
+                <Jumbotron2 page={this.Capitalize(this.props.match.params.animal) + " Forum"} other={"Questions asked by users, answered by users"}>
+                </Jumbotron2>
 
                 {console.log(this.state.posts)}
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import Jumbotron2 from "../components/Jumbotron2";
 import Nav2 from "../components/Nav";
+import FAQinfo from "../components/FAQinfo"
 
 
 class FAQ extends React.Component {
@@ -19,9 +20,13 @@ class FAQ extends React.Component {
       }
       render () {
           return (
-              <Jumbotron2>
+              <div>
+               <Jumbotron2 page={"FAQs"} other={"this is the FAQ page"} >
                   <Nav2 />
               </Jumbotron2>
+              <FAQinfo />
+              </div>
+              
           )
       }
 }
