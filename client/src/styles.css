@@ -6,7 +6,6 @@
     background-image: url("/images/jumbotronBackground.jpg");
     box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.5);
     height: 500px;
-    
 }
 
 .mainjumbotron {
@@ -14,7 +13,7 @@
     margin-bottom: 0px !important;
 }
 
-#test {
+#logoAlign {
     align-content: center;
     margin: 0;
     position: relative;
@@ -29,7 +28,6 @@
 .jumbotron2 .title {
     text-align: center;
     margin-top: 10%;
-    /* padding-top: 0px !important; */
 }
 .title {
     height: 750px;
@@ -57,10 +55,6 @@
     width: 200px;
     text-align: center;
 }
-
-/* .lead {
-    color:#8CCCCB;
-} */
 
 .purposeContainer {
     margin-top: 50px;
