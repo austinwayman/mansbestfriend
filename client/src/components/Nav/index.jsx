@@ -1,51 +1,56 @@
 import React from "react";
-import {Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import { Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import { Link } from "react-router-dom";
 // import "./style.css";
 
 function Nav2() {
   return (
     <Navbar id="navbarthick" color="light" light expand="md">
-    <NavbarToggler/>
-    <Collapse navbar>
-      <Nav className="ml-auto" navbar>
+      <NavbarToggler />
+      <Collapse navbar>
+        <Nav className="ml-auto" navbar>
 
-        <NavItem>
-          <NavLink href="/Forum/">Forum</NavLink>
-        </NavItem>
+          <NavItem>
+            <Link to="/Forum/">Forum</Link>
+          </NavItem>
 
-        <NavItem>
-          <NavLink href="/FAQ/">FAQs</NavLink>
-        </NavItem>
+          <NavItem>
+            <NavLink href="/FAQ/">FAQs</NavLink>
+          </NavItem>
 
-        <UncontrolledDropdown nav inNavbar>
-          <DropdownToggle nav caret>
-            Care & Wellness
+          <UncontrolledDropdown nav inNavbar>
+            <DropdownToggle nav caret>
+              Care & Wellness
           </DropdownToggle>
-          <DropdownMenu right>
-            <DropdownItem>
-              Option 1
+            <DropdownMenu right>
+              <DropdownItem>
+                Option 1
             </DropdownItem>
-            <DropdownItem>
-              Option 2
+              <DropdownItem>
+                Option 2
             </DropdownItem>
-            <DropdownItem divider />
-            <DropdownItem>
-              Reset
+              <DropdownItem divider />
+              <DropdownItem>
+                Reset
             </DropdownItem>
-          </DropdownMenu>
-        </UncontrolledDropdown>
+            </DropdownMenu>
+          </UncontrolledDropdown>
 
-        <NavItem>
-          <NavLink href="/vetfinder/">VetFinder</NavLink>
-        </NavItem>
+          <NavItem>
+            <NavLink href="/vetfinder/">VetFinder</NavLink>
+          </NavItem>
 
-        <NavItem>
-          <NavLink href="/LostAndFound/">Lost/Found</NavLink>
-        </NavItem>
-       
-      </Nav>
-    </Collapse>
-  </Navbar>
+          <NavItem>
+            <NavLink href="/LostAndFound/">Lost/Found</NavLink>
+          </NavItem>
+
+          <NavItem>
+            <NavLink href="/signuplogin/">Sign Up/Login</NavLink>
+          </NavItem>
+
+        </Nav>
+      </Collapse>
+    </Navbar>
   );
 }
 
