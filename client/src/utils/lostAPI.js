@@ -20,5 +20,5 @@ export default {
         return axios.post("/api/found", postObj)
     }
 
-}
+};
 
