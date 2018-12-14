@@ -11,7 +11,7 @@ router.post("/lost", function(req, res) {
 });
 
 router.get("/lost", function(req,res) {
-    db.Lost.find({}).populate()
+    db.Lost.find({})
     .then(function (result) {
         res.json(result)
     });
