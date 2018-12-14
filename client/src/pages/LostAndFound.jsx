@@ -38,7 +38,24 @@ class Lost extends Component {
             breed: "Tabby"
         }
         API.postLostAnimal(newPet) 
-    }
+    };
+
+    handleFormSubmit = event => {
+
+        event.preventDefault();
+
+        this.newPost = {
+            name:this.state.name,
+            breed: this.state.breed,
+            description: this.state.description,
+            image: this.state.image,
+            contact: this.state.contact
+        }
+
+        API.postLastAnimal(this.newPost)
+        .then(res => this.getAllLost())
+        .catch(err => console.log(err));
+    };
 
     
 
@@ -55,6 +72,7 @@ class Lost extends Component {
               <div classname="d-flex justify-items-center" style={{textAlign: "center"}}>
               <Button outline color="info">Add a Lost or Found Pet</Button>{' '}
               </div>
+              
                 <LostDogForm/>
                 
               </div>   
