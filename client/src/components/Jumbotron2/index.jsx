@@ -15,7 +15,7 @@ class Jumbotron2 extends React.Component {
     <Jumbotron className="mainjumbotron">
 
       {/* logo image */}
-      <div id="test"><a href ="/">
+      <div id="logoAlign"><a href ="/">
       <img src="/images/logo_transparent.png" alt="Mylogo" id="logoimg"></img>
       </a></div>
 
