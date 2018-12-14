@@ -10,7 +10,7 @@ class VetFinder extends Component {
       render () {
           return (
               <div>
-              <Jumbotron2 page={"VetFinder"} other={"Finding Vets for checkups or emergencies."} />
+              <Jumbotron2 page={"Vet Finder"} other={"Find Vets for checkups or emergencies."} />
               <VetFinderCard />
               </div>
           )
