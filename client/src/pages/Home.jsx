@@ -38,12 +38,12 @@ class Home extends React.Component {
               <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav className="ml-auto" navbar>
 
-                  <NavItem className="nav-item2">
-                    <Link to="/Forum">Forum</Link>
+                  <NavItem>
+                    <NavLink tag ={Link} to="/Forum">Forum</NavLink>
                   </NavItem>
 
-                  <NavItem className="nav-item2">
-                    <NavLink href="/FAQ/">FAQs</NavLink>
+                  <NavItem>
+                    <NavLink tag ={Link} to="/FAQ/">FAQs</NavLink>
                   </NavItem>
 
                   <UncontrolledDropdown nav inNavbar className="nav-item2">
@@ -65,15 +65,15 @@ class Home extends React.Component {
                   </UncontrolledDropdown>
 
                   <NavItem>
-                    <NavLink href="/VetFinder/">VetFinder</NavLink>
+                    <NavLink tag={Link} to="/VetFinder/">VetFinder</NavLink>
                   </NavItem>
 
                   <NavItem>
-                    <NavLink href="/LostAndFound/">Lost/Found</NavLink>
+                    <NavLink tag={Link} to="/LostAndFound/">Lost/Found</NavLink>
                   </NavItem>
 
                   <NavItem>
-                    <NavLink href="/LostAndFound/">Sign Up/Login</NavLink>
+                    <NavLink tag={Link} to="#">Sign Up/Login</NavLink>
                   </NavItem>
 
                 </Nav>

@@ -3,7 +3,7 @@ import Jumbotron2 from "../components/Jumbotron2";
 import "../../src/styles.css";
 import {
     Card, CardImg, CardBody,
-    CardTitle, Container, Row, Col
+    Container, Row, Col
 } from 'reactstrap';
 import { Link } from "react-router-dom";
 
@@ -18,43 +18,34 @@ class ForumPage extends Component {
                 {/* Jumbotron End */}
 
 
+                {/* Forum Container Start */}
                 <div className="forumContainer">
                     <Container>
                         <Row>
                             <Col>
-                            <Card>
-                                <a href="/forum/dogs">
+                            <Card className="cardResize" tag={Link} to="/forum/dogs">
                                     <CardImg top width="100%" src="/images/puppy.png" alt="Card image cap" />
                                     <CardBody>
-                                        <CardTitle>Dogs</CardTitle>
+                                        {/* <CardTitle></CardTitle> */}
                                     </CardBody>
-                                </a>
                             </Card>
                             </Col>
 
                             <Col>
-                            <Card>
-                                <a href="/forum/cats">
+                            <Card className="cardResize" tag={Link} to="/forum/cats">
                                     <CardImg top width="100%" src="/images/kitten.png" alt="Card image cap" />
                                     <CardBody>
-                                        <CardTitle>Cats</CardTitle>
+                                        {/* <CardTitle></CardTitle> */}
                                     </CardBody>
-                                </a>
                             </Card>
                             </Col>
                         </Row>
                     </Container>
                 </div>
+                {/* Forum Container End */}
+
             </div>
-
-
-
-
-
-
         )
-
-
     }
 
 
