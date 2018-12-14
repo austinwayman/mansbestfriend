@@ -1,6 +1,8 @@
 import React from 'react';
 import { Jumbotron, Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem, Col, Row, Container } from 'reactstrap';
 import "../../src/styles.css";
+import {Animated} from "react-animated-css";
+import { Link } from "react-router-dom";
 
 
 class Home extends React.Component {
@@ -37,7 +39,7 @@ class Home extends React.Component {
                 <Nav className="ml-auto" navbar>
 
                   <NavItem className="nav-item2">
-                    <NavLink href="/Forum/">Forum</NavLink>
+                    <Link to="/Forum">Forum</Link>
                   </NavItem>
 
                   <NavItem className="nav-item2">
@@ -77,9 +79,9 @@ class Home extends React.Component {
                 </Nav>
               </Collapse>
             </Navbar>
+          </div>
             {/* Navbar end */}
 
-          </div>
           {/* Jumbotron Text Start */}
           <div className="titletext">
             <h1 className="display-3">MyBestFriend</h1>
@@ -89,8 +91,10 @@ class Home extends React.Component {
         </Jumbotron>
         {/* End of Jumbotron */}
 
+
         {/* Start of Purpose */}
       <div className="purposeContainer">
+          <Animated animationIn="fadeInLeft" animationInDelay="2" isVisible={true}>
         <Container>
           <Row>
             <Col m="4" xl="4">
@@ -101,8 +105,11 @@ class Home extends React.Component {
             <Col m="8" xl="8"><img src="/images/cat.png" alt="petimage" width="100%"></img></Col>
           </Row>
         </Container>
+          </Animated>
       </div>
       {/* End of Purpose */}
+
+
 
 
       {/* Footer Start */}
@@ -113,10 +120,7 @@ class Home extends React.Component {
           </Col>
         </Row>
       </div>
-
-
-
-
+      {/* Footer End */}
 
       </div>
 

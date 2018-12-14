@@ -1,5 +1,6 @@
 import React from "react";
 import { Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import { Link } from "react-router-dom";
 // import "./style.css";
 
 function Nav2() {
@@ -10,7 +11,7 @@ function Nav2() {
         <Nav className="ml-auto" navbar>
 
           <NavItem>
-            <NavLink href="/Forum/">Forum</NavLink>
+            <Link to="/Forum/">Forum</Link>
           </NavItem>
 
           <NavItem>
