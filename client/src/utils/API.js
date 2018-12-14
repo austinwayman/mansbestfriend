@@ -20,6 +20,18 @@ export default {
 
   postComment: function(route, postObj, id){
     return axios.post("/api/" + route + id, postObj);
+  },
+
+  signUp : function(userInfo){
+    return axios.post("/v1/signup", userInfo)
+  },
+
+  signIn: function (userInfo){
+    return axios.post("/v1/signin", userInfo)
+  },
+
+  checkAuth: function (){
+    return axios.get("/v1/protected")
 
   }
 

@@ -1,6 +1,6 @@
-.App {
+/* .App {
     overflow-x: hidden;
-}
+} */
 
 .jumbotron {
     background-image: url("/images/jumbotronBackground.jpg");
@@ -72,4 +72,8 @@
 #footerText {
     padding: 40px;
     color: white;
+}
+
+.forumContainer {
+    margin: 50px;
 }
