@@ -10,6 +10,7 @@ import Jumbotron2 from "../components/Jumbotron2";
 class Lost extends Component {
     state = {
         list: [],
+        modal: false,
         name: "",
         breed: "",
         description: "",
@@ -19,20 +20,35 @@ class Lost extends Component {
 
     componentDidMount() {
         this.getAllLost()
-    }
+        // this.postNewLost()
+    };
 
     getAllLost = () => {
-        API.getLostAnimals(this.props.match.params.name).then (
-            result => this.setState({list: result.data}),
-            console.log(this.state)
-        )
+        console.log("Fire")
+        API.getLostAnimals().then (
+            result => this.setState({list: result.data, modal: false})
+            )
+            console.log(this.state.list)
+    };
+
+    postNewLost = () => {
+        console.log("tester")
+        let newPet = {
+            name: "Pounce",
+            breed: "Tabby"
+        }
+        API.postLostAnimal(newPet) 
     }
+
+    
+
     constructor(props) {
         super(props);
-      }
+      };
 
 
       render () {
+        console.log(this.state.list)
           return (
               <div>
               <Jumbotron2 page={"Lost & Found"} other={"Find or Post a missing loved one."} />
