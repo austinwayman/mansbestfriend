@@ -11,7 +11,7 @@ import {
   CardLink
 } from "reactstrap";
 import "./style.css";
-import "animate.min.css"
+
 
 const VetFinderCard = props => {
   return (
