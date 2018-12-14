@@ -45,7 +45,7 @@ export function LostDogForm(props) {
           </FormText>
         </FormGroup>
         </Row>
-        <Button>Sign in</Button>
+        <Button>Add Pet</Button>
       </Form>
     );
 }

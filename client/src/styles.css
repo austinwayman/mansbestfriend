@@ -78,3 +78,11 @@
     margin: 50px;
 }
 
+/* {
+    background-color: blue;
+} */
+
+.cardResize {
+    width: 500px;   
+    height:500px
+}
