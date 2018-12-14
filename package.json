@@ -13,6 +13,7 @@
     "heroku-postbuild": "npm run build"
   },
   "dependencies": {
+    "animate.css": "^3.7.0",
     "axios": "^0.16.2",
     "babel-loader": "^8.0.4",
     "babel-plugin-named-asset-import": "^0.2.3",
