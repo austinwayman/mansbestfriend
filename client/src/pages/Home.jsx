@@ -85,7 +85,7 @@ class Home extends React.Component {
           {/* Jumbotron Text Start */}
           <div className="titletext">
             <h1 className="display-3">MyBestFriend</h1>
-            <p className="lead">The best place for information about your new pet.</p>
+            <p className="lead">animal care for animal lovers</p>
           </div>
           {/* Jumbotron Text End */}
         </Jumbotron>
