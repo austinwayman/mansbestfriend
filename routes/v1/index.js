@@ -26,7 +26,7 @@ router.get("/protected", requireAuth, function (req, res) {
 
   
 
-    res.send(req.user.profile);
+    res.send("You have been protected!");
   
 
 

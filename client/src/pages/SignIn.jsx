@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Button, Modal, Form, FormGroup, Label, ModalHeader, ModalBody, ModalFooter, Input, Container, Row, Col } from 'reactstrap';
 import API from "../utils/API";
+import axios from "axios"; 
 
 
 
@@ -9,6 +10,10 @@ class SignUpIn extends Component {
     state = {
         username: "",
         password: ""
+    }
+
+    componentWillMount = () => {
+        console.log(axios.defaults.headers.common)
     }
 
     handleusername = (event) => {
@@ -43,7 +48,13 @@ class SignUpIn extends Component {
         }
 
         API.signIn(obj).then(res => {
-            console.log(res)
+            console.log(res.data.token)
+
+            axios.defaults.headers.common['authorization'] = res.data.token;
+
+            localStorage.setItem("userToken", res.data.token)
+
+        
             this.props.history.push("/")
         })
 

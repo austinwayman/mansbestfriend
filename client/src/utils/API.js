@@ -30,8 +30,8 @@ export default {
     return axios.post("/v1/signin", userInfo)
   },
 
-  checkAuth: function (){
-    return axios.get("/v1/protected")
+  checkAuth: function (token){
+    return axios.get("/v1/protected", token)
 
   }
 

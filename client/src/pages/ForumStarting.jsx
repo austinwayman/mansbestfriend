@@ -5,6 +5,7 @@ import {
     Card, CardImg, CardBody,
     CardTitle, Container, Row, Col
 } from 'reactstrap';
+import { Link } from "react-router-dom";
 
 
 class ForumPage extends Component {
