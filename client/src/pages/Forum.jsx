@@ -82,13 +82,7 @@ class Forum extends Component {
 
     toggle = () => {
 
-        // console.log(axios.defaults.headers.common.authorization);
-
-        const token = localStorage.getItem("userToken")
-        console.log(token)
-
-
-        API.checkAuth(token)
+        API.checkAuth()
             .then(result => {
                 this.setState({
                     modal: !this.state.modal
@@ -103,6 +97,7 @@ class Forum extends Component {
 
 
             })
+
 
     }
 
@@ -152,6 +147,16 @@ class Forum extends Component {
 
     }
 
+    
+  handleSignOut = () => {
+
+    axios.defaults.headers.common['authorization'] = "";
+    localStorage.removeItem("userToken")
+
+    this.props.history.push("/")
+
+  }
+
 
     /* end button navs */
 
@@ -159,7 +164,7 @@ class Forum extends Component {
 
 
     render() {
-        console.log(axios.defaults.headers.common);
+        // console.log(axios.defaults.headers.common);
 
         return (
 
@@ -170,6 +175,10 @@ class Forum extends Component {
                 {console.log(this.state.posts)}
 
                 <ThreadAddBtn toggle={this.toggle} />
+
+         
+                 <Button onClick={this.handleSignOut}>Logout</Button>
+                  
 
                 <div>
                     <Modal isOpen={this.state.modal} toggle={this.toggle}>
@@ -248,7 +257,7 @@ class Forum extends Component {
         )
 
     }
-
+ 
 }
 
 export default Forum

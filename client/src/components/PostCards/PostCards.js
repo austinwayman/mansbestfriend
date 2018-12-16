@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 
 export function Card(props) {
@@ -13,9 +14,9 @@ export function Card(props) {
                             <p className="card-text">{props.content}</p>
 
 
-                            <a href = {'/posts/' + props.id}>
+                            <Link to = {'/posts/' + props.id}>
                             <button value = {props.id} className="btn btn-primary"> Read More</button>
-                            </a>
+                            </Link>
 
                         
 

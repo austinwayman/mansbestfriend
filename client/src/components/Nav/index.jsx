@@ -11,7 +11,8 @@ function Nav2() {
         <Nav className="ml-auto" navbar>
 
           <NavItem>
-            <Link to="/Forum/">Forum</Link>
+           <NavLink>Forum</NavLink> 
+            {/* <NavLink> <Link to="/Forum/">Forum</Link> </NavLink> */}
           </NavItem>
 
           <NavItem>
@@ -24,7 +25,7 @@ function Nav2() {
           </DropdownToggle>
             <DropdownMenu right>
               <DropdownItem>
-                Option 1
+                <Link to="/careAware">Care and Awareness</Link>
             </DropdownItem>
               <DropdownItem>
                 Option 2
