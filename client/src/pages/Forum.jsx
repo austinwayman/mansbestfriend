@@ -158,6 +158,16 @@ class Forum extends Component {
   }
 
 
+    handleSignOut = () => {
+
+        axios.defaults.headers.common['authorization'] = "";
+        localStorage.removeItem("userToken")
+
+        this.props.history.push("/")
+
+    }
+
+
     /* end button navs */
 
 
@@ -169,82 +179,91 @@ class Forum extends Component {
         return (
 
             <div>
-                <Jumbotron2 page={this.Capitalize(this.props.match.params.animal) + " Forum"} other={"Questions asked by users, answered by users"}>
-                </Jumbotron2>
-
-                {console.log(this.state.posts)}
-
-                <ThreadAddBtn toggle={this.toggle} />
-
-         
-                 <Button onClick={this.handleSignOut}>Logout</Button>
-                  
+            
 
                 <div>
-                    <Modal isOpen={this.state.modal} toggle={this.toggle}>
-                        <ModalHeader>Add Thread</ModalHeader>
-                        <ModalBody>
-                            <Form>
-                                <FormGroup>
-                                    <Label for="title">Title of Thread : </Label>
-                                    <Input name="title" value={this.state.title} onChange={this.handleTitleChange} placeholder="Title Of Your Thread" />
-                                </FormGroup>
-                                <FormGroup>
-                                    <Label for="category">Category</Label>
-                                    <Input type="select" id="exampleSelect" name="category" value={this.state.category} onChange={this.handleCategoryChange} placeholder="Category Of Your Thread">
-                                        <option>Health and Nutrition</option>
-                                        <option>Pet Training</option>
-                                        <option>Breeding</option>
-                                        <option>Rescue & Adoption</option>
-                                        <option>Shows & Events</option>
-                                    </Input>
-                                </FormGroup>
-                                <FormGroup>
-                                    <Label for="category">Animal</Label>
-                                    <Input type="select" id="exampleSelect" name="animal" value={this.state.animal} onChange={this.handleAnimalChange} placeholder="Type of Animal">
-                                        <option>cats</option>
-                                        <option>dogs</option>
-                                    </Input>
-                                </FormGroup>
-                                <FormGroup>
-                                    <Label for="category">Content</Label>
-                                    <Input name="content" value={this.state.content} onChange={this.handleContentChange} placeholder="Content" />
-                                </FormGroup>
-                            </Form>
-                        </ModalBody>
-                        <ModalFooter>
-                            <Button color="primary" onClick={this.handleThreadSubmit}>Post Thread</Button>{' '}
-                            <Button color="secondary" onClick={this.toggle}>Cancel</Button>
-                        </ModalFooter>
-                    </Modal>
+                    <Jumbotron2 page={this.Capitalize(this.props.match.params.animal) + " Forum"} other={"Questions asked by users, answered by users"}>
+                    </Jumbotron2>
                 </div>
 
-                <Container>
-                    <Row>
-                        <Col xl="6">
-                            <p><Button color="secondary" value="Health and Nutrition" onClick={this.healthAndNut}>Health and Nutrition</Button></p>
-                            <p><Button color="secondary" value="Pet Training" onClick={this.petTraining}>Pet Training</Button></p>
-                            <p><Button color="secondary" value="Breeding" onClick={this.breeding}>Breeding</Button></p>
-                            <p><Button color="secondary" value="Rescue & Adoption" onClick={this.rescueAndAdop}>Rescue & Adoption</Button></p>
-                            <p><Button color="secondary" value="Shows & Events" onClick={this.showsAndEvents}>Shows & Events</Button></p>
 
-                        </Col>
-                        <Col xl="6">
+                <div className="forumContainer">
 
-                            {
 
-                                this.state.posts.map(post => {
 
-                                    return (
-                                        <Card title={post.title} category={post.category} content={post.content} id={post._id} />
-                                    )
-                                })
 
-                            }
+                    <div>
+                        <Modal isOpen={this.state.modal} toggle={this.toggle}>
+                            <ModalHeader>Add Thread</ModalHeader>
+                            <ModalBody>
+                                <Form>
+                                    <FormGroup>
+                                        <Label for="title">Title of Thread : </Label>
+                                        <Input name="title" value={this.state.title} onChange={this.handleTitleChange} placeholder="Title Of Your Thread" />
+                                    </FormGroup>
+                                    <FormGroup>
+                                        <Label for="category">Category</Label>
+                                        <Input type="select" id="exampleSelect" name="category" value={this.state.category} onChange={this.handleCategoryChange} placeholder="Category Of Your Thread">
+                                            <option>Health and Nutrition</option>
+                                            <option>Pet Training</option>
+                                            <option>Breeding</option>
+                                            <option>Rescue & Adoption</option>
+                                            <option>Shows & Events</option>
+                                        </Input>
+                                    </FormGroup>
+                                    <FormGroup>
+                                        <Label for="category">Animal</Label>
+                                        <Input type="select" id="exampleSelect" name="animal" value={this.state.animal} onChange={this.handleAnimalChange} placeholder="Type of Animal">
+                                            <option>cats</option>
+                                            <option>dogs</option>
+                                        </Input>
+                                    </FormGroup>
+                                    <FormGroup>
+                                        <Label for="category">Content</Label>
+                                        <Input name="content" value={this.state.content} onChange={this.handleContentChange} placeholder="Content" />
+                                    </FormGroup>
+                                </Form>
+                            </ModalBody>
+                            <ModalFooter>
+                                <Button color="primary" onClick={this.handleThreadSubmit}>Post Thread</Button>{' '}
+                                <Button color="secondary" onClick={this.toggle}>Cancel</Button>
+                            </ModalFooter>
+                        </Modal>
+                    </div>
 
-                        </Col>
-                    </Row>
-                </Container>
+                    <Container>
+                        <Row>
+                            <Col xl="6">
+                                <p><Button color="secondary" value="Health and Nutrition" onClick={this.healthAndNut}>Health and Nutrition</Button></p>
+                                <p><Button color="secondary" value="Pet Training" onClick={this.petTraining}>Pet Training</Button></p>
+                                <p><Button color="secondary" value="Breeding" onClick={this.breeding}>Breeding</Button></p>
+                                <p><Button color="secondary" value="Rescue & Adoption" onClick={this.rescueAndAdop}>Rescue & Adoption</Button></p>
+                                <p><Button color="secondary" value="Shows & Events" onClick={this.showsAndEvents}>Shows & Events</Button></p>
+                                <p> <ThreadAddBtn toggle={this.toggle} /></p>
+                                <p> <Button onClick={this.handleSignOut}>Logout</Button></p>
+                               
+
+
+                       
+
+                            </Col>
+                            <Col xl="6">
+
+                                {
+
+                                    this.state.posts.map(post => {
+
+                                        return (
+                                            <Card title={post.title} category={post.category} content={post.content} id={post._id} />
+                                        )
+                                    })
+
+                                }
+
+                            </Col>
+                        </Row>
+                    </Container>
+                </div>
 
 
 

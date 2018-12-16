@@ -1,9 +1,19 @@
-import React from 'react';
-import { Card, CardImg, CardText, CardBody, CardLink,
-  CardTitle, CardSubtitle, Container, Row, Col } from 'reactstrap';
-import "./style.css"; 
+import React from "react";
+import {
+  Card,
+  CardTitle,
+  CardText,
+  CardImg,
+  CardImgOverlay,
+  Container,
+  Row,
+  Col,
+  CardLink
+} from "reactstrap";
+import "./style.css";
 
-const VetFinderCard = (props) => {
+
+const VetFinderCard = props => {
   return (
     
       
@@ -24,6 +34,5 @@ const VetFinderCard = (props) => {
   
   );
 };
-
 
 export default VetFinderCard;

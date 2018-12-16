@@ -1,5 +1,10 @@
 import React, { Component } from "react";
 import Jumbotron2 from "../components/Jumbotron2";
+import "../../src/styles.css";
+import {
+    Card, CardImg, CardBody,
+    Container, Row, Col
+} from 'reactstrap';
 import { Link } from "react-router-dom";
 
 
@@ -7,41 +12,40 @@ class ForumPage extends Component {
 
     render() {
         return (
-<div>
-            <Jumbotron2 page="Forum" other="This is the forum." />
+            <div>
+                {/* Jumbotron Start */}
+                <Jumbotron2 page="Forum" other="This is the forum." />
+                {/* Jumbotron End */}
 
 
-            <div className="container">
-            <div className="row">
-                <div className="col col-xl-6">
-                <Link to="/forum/dogs">
-                    <div className="card">
-                        <div className="card-body">
-                            Dogs
-                        </div>
-                    </div>
-                </Link>
+                {/* Forum Container Start */}
+                <div className="forumContainer">
+                    <Container>
+                        <Row>
+                            <Col>
+                            <Card className="cardResize" tag={Link} to="/forum/dogs">
+                                    <CardImg top width="100%" src="/images/puppy.png" alt="Card image cap" />
+                                    <CardBody>
+                                        {/* <CardTitle></CardTitle> */}
+                                    </CardBody>
+                            </Card>
+                            </Col>
+
+                            <Col>
+                            <Card className="cardResize" tag={Link} to="/forum/cats">
+                                    <CardImg top width="100%" src="/images/kitten.png" alt="Card image cap" />
+                                    <CardBody>
+                                        {/* <CardTitle></CardTitle> */}
+                                    </CardBody>
+                            </Card>
+                            </Col>
+                        </Row>
+                    </Container>
                 </div>
-                <div className="col col-xl-6">
-                <Link to="/forum/cats">
-                    <div className="card">
-                        <div className="card-body">
-                            Cats
-                        </div>
-                    </div>
-                </Link>
-                </div>
+                {/* Forum Container End */}
+
             </div>
-        </div>
-        </div>
-
-
-
-
-
         )
-
-
     }
 
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Jumbotron, Button, Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem, Col, Row, Container } from 'reactstrap';
 import "../../src/styles.css";
+import {Animated} from "react-animated-css";
 import { Link } from "react-router-dom";
 import API from '../utils/API';
 import axios from "axios"
@@ -54,8 +55,8 @@ class Home extends React.Component {
                     <Link to="/Forum">Forum</Link>
                   </NavItem>
 
-                  <NavItem className="nav-item2">
-                    <NavLink href="/FAQ/">FAQs</NavLink>
+                  <NavItem>
+                    <NavLink tag ={Link} to="/FAQ/">FAQs</NavLink>
                   </NavItem>
 
                   <UncontrolledDropdown nav inNavbar className="nav-item2">
@@ -77,15 +78,15 @@ class Home extends React.Component {
                   </UncontrolledDropdown>
 
                   <NavItem>
-                    <NavLink href="/VetFinder/">VetFinder</NavLink>
+                    <NavLink tag={Link} to="/VetFinder/">VetFinder</NavLink>
                   </NavItem>
 
                   <NavItem>
-                    <NavLink href="/LostAndFound/">Lost/Found</NavLink>
+                    <NavLink tag={Link} to="/LostAndFound/">Lost/Found</NavLink>
                   </NavItem>
 
                   <NavItem>
-                    <NavLink href="/LostAndFound/">Sign Up/Login</NavLink>
+                    <NavLink tag={Link} to="#">Sign Up/Login</NavLink>
                   </NavItem>
 
                    <NavItem>
@@ -95,9 +96,9 @@ class Home extends React.Component {
                 </Nav>
               </Collapse>
             </Navbar>
+          </div>
             {/* Navbar end */}
 
-          </div>
           {/* Jumbotron Text Start */}
           <div className="titletext">
             <h1 className="display-3">MyBestFriend</h1>
@@ -107,8 +108,10 @@ class Home extends React.Component {
         </Jumbotron>
         {/* End of Jumbotron */}
 
+
         {/* Start of Purpose */}
       <div className="purposeContainer">
+          <Animated animationIn="fadeInLeft" animationInDelay="2" isVisible={true}>
         <Container>
           <Row>
             <Col m="4" xl="4">
@@ -119,8 +122,11 @@ class Home extends React.Component {
             <Col m="8" xl="8"><img src="/images/cat.png" alt="petimage" width="100%"></img></Col>
           </Row>
         </Container>
+          </Animated>
       </div>
       {/* End of Purpose */}
+
+
 
 
       {/* Footer Start */}
@@ -131,10 +137,7 @@ class Home extends React.Component {
           </Col>
         </Row>
       </div>
-
-
-
-
+      {/* Footer End */}
 
       </div>
 
