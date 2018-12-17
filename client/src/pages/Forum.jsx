@@ -5,6 +5,7 @@ import Card from "../components/PostCards/PostCards"
 import ThreadAddBtn from "../components/ThreadAddBtn/ThreadAddBtn"
 import Jumbotron2 from "../components/Jumbotron2";
 import axios from 'axios'
+import "../../src/styles.css";
 
 
 class Forum extends Component {

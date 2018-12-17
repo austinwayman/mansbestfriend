@@ -111,7 +111,7 @@ class Home extends React.Component {
 
         {/* Start of Purpose */}
       <div className="purposeContainer">
-          <Animated animationIn="fadeInLeft" animationInDelay="2" isVisible={true}>
+          <Animated animationIn="fadeInLeft" animationInDelay={2} isVisible={true}>
         <Container>
           <Row>
             <Col m="4" xl="4">
