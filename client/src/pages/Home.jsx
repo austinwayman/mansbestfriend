@@ -1,5 +1,5 @@
 import React from 'react';
-import { Jumbotron, Button, Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink, Col, Row, Container } from 'reactstrap';
+import { Jumbotron, Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink, Col, Row, Container } from 'reactstrap';
 import "../../src/styles.css";
 import { Animated } from "react-animated-css";
 import { Link } from "react-router-dom";
@@ -85,7 +85,7 @@ class Home extends React.Component {
           {/* Navbar end */}
 
           {/* Jumbotron Text Start */}
-          <Animated animationIn="fadeIn" animationInDelay="5" isVisible={true}>
+          <Animated animationIn="fadeIn" isVisible={true}>
           <div className="titletext">
             <h1 className="display-3">MyBestFriend</h1>
             <p className="lead">animal info for animal lovers</p>
@@ -98,7 +98,7 @@ class Home extends React.Component {
 
         {/* Start of Purpose */}
         <div className="purposeContainer">
-          <Animated animationIn="fadeInLeft" animationInDelay="2" isVisible={true}>
+          <Animated animationIn="fadeInLeft" isVisible={true}>
             <Container>
               <Row>
                 <Col m="4" xl="4">
