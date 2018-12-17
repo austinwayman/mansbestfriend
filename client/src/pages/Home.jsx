@@ -1,8 +1,10 @@
 import React from 'react';
-import { Jumbotron, Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem, Col, Row, Container } from 'reactstrap';
+import { Jumbotron, Button, Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem, Col, Row, Container } from 'reactstrap';
 import "../../src/styles.css";
 import {Animated} from "react-animated-css";
 import { Link } from "react-router-dom";
+import API from '../utils/API';
+import axios from "axios"
 
 
 class Home extends React.Component {
@@ -19,6 +21,16 @@ class Home extends React.Component {
       isOpen: !this.state.isOpen
     });
   }
+
+  handleSignOut = () => {
+
+    axios.defaults.headers.common['authorization'] = "";
+
+    this.props.history.push("/")
+
+  }
+
+
   render() {
     return (
       <div className="App">
@@ -38,8 +50,9 @@ class Home extends React.Component {
               <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav className="ml-auto" navbar>
 
-                  <NavItem>
-                    <NavLink tag ={Link} to="/Forum">Forum</NavLink>
+                  <NavItem className="nav-item2">
+                  {/* <NavLink>Forum</NavLink> */}
+                    <Link to="/Forum">Forum</Link>
                   </NavItem>
 
                   <NavItem>
@@ -52,7 +65,7 @@ class Home extends React.Component {
                 </DropdownToggle>
                     <DropdownMenu right>
                       <DropdownItem>
-                        Option 1
+                      <Link to="/careAware">Care and Awareness</Link>
                   </DropdownItem>
                       <DropdownItem>
                         Option 2
@@ -74,6 +87,10 @@ class Home extends React.Component {
 
                   <NavItem>
                     <NavLink tag={Link} to="#">Sign Up/Login</NavLink>
+                  </NavItem>
+
+                   <NavItem>
+                    <Button onClick={this.handleSignOut}>Logout</Button>
                   </NavItem>
 
                 </Nav>

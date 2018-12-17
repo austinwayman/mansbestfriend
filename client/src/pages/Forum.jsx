@@ -147,6 +147,16 @@ class Forum extends Component {
 
     }
 
+    
+  handleSignOut = () => {
+
+    axios.defaults.headers.common['authorization'] = "";
+    localStorage.removeItem("userToken")
+
+    this.props.history.push("/")
+
+  }
+
 
     handleSignOut = () => {
 
@@ -169,6 +179,8 @@ class Forum extends Component {
         return (
 
             <div>
+            
+
                 <div>
                     <Jumbotron2 page={this.Capitalize(this.props.match.params.animal) + " Forum"} other={"Questions asked by users, answered by users"}>
                     </Jumbotron2>
@@ -264,7 +276,7 @@ class Forum extends Component {
         )
 
     }
-
+ 
 }
 
 export default Forum

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"
 
 export function ForumStartBtn() {
     return (
@@ -6,13 +7,13 @@ export function ForumStartBtn() {
         <div className="container">
             <div className="row">
                 <div className="col col-xl-6">
-                <a href="#">
+                <Link to ="#">
                     <div className="card">
                         <div className="card-body">
                             Dogs
                         </div>
                     </div>
-                </a>
+                </Link>
                 </div>
                 <div className="col col-xl-6">
                 <a href="#">
