@@ -9,7 +9,7 @@ export function LostDogCard(props) {
                     <div className="card-body">
                         <img src={props.image}></img>
                         <h5 className="card-title">{props.name}</h5>
-                        <p className="card-text">{props.comment}</p>
+                        <p className="card-text">{props.description}</p>
                     </div>
                 </div>
             </div>
