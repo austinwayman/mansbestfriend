@@ -3,6 +3,7 @@ import Jumbotron2 from "../components/Jumbotron2";
 import VetFinderCard from "../components/VetFinderCard";
 import { Button, Modal, Form, FormGroup, Label, ModalHeader, ModalBody, ModalFooter, Input, Container, Row, Col } from 'reactstrap';
 import API from "../utils/API";
+import Yelp from "../components/YelpBtn/yelpbtn"
 
 class VetFinder extends Component {
 
@@ -18,7 +19,13 @@ class VetFinder extends Component {
         });
     }
 
+    test = () => {
+        console.log("working")
+    }
+
     handleYelpSubmit = () => {
+
+        console.log("working")
 
         API.findVet(this.state.search).then(result => this.setState({yelp : result.data.jsonBody.businesses}))
 
@@ -33,7 +40,10 @@ class VetFinder extends Component {
 
             <div>
                 <Jumbotron2 page={"VetFinder"} other={"Finding Vets for checkups or emergencies."} />
+
                 <Container>
+
+
                     <Form>
                         <FormGroup>
                             <Input
@@ -43,12 +53,13 @@ class VetFinder extends Component {
                                 placeholder="Enter zipcode here to search for closest vets"
                             />
                         </FormGroup>
-                    </Form>
-                    <Button color="primary"
-                     onClick={this.handleYelpSubmit} >
-                     Search</Button>
+                      
+                     <Button onClick={this.handleYelpSubmit}>
+                        Search </Button>{' '}
+                        </Form>
 
                      <Row>
+
 
 
                      {
