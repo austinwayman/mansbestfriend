@@ -1,5 +1,5 @@
-body {
-    font-size: 18px;
+.App {
+    overflow-x: hidden;
 }
 
 .jumbotron {
@@ -34,11 +34,6 @@ body {
     text-align: center;
 
 }
-
-.title2 {
-    text-align: center;
-    margin-top: 150px;
-}
 .titletext {
     margin-top: 17%;
 }
@@ -72,17 +67,10 @@ body {
     box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.2);
     height: 100px;
     text-align: center;
-
-    position: relative;
-    margin-top: 50%;
-    bottom:0px;
-    width: 100%;
-    margin: 0;
-  
 }
 
 #footerText {
-    padding: 36px;
+    padding: 40px;
     color: white;
 }
 

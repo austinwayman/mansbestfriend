@@ -22,7 +22,7 @@ class Jumbotron2 extends React.Component {
           </Link></div>
           <Nav2 />
           <Animated animationIn="fadeIn" isVisible={true}>
-            <div className="title">
+            <div className="title2">
               <h1 className="display-3">{this.props.page}</h1>
               <p className="lead">{this.props.other}</p>
             </div>

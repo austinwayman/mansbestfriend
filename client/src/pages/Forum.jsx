@@ -6,6 +6,7 @@ import ThreadAddBtn from "../components/ThreadAddBtn/ThreadAddBtn"
 import Jumbotron2 from "../components/Jumbotron2";
 import axios from 'axios';
 import Footer from "../components/Footer";
+import "../../src/styles.css";
 
 
 class Forum extends Component {
