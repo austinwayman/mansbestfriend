@@ -1,7 +1,7 @@
 import React from 'react';
-import { Jumbotron, Button, Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem, Col, Row, Container } from 'reactstrap';
+import { Jumbotron, Button, Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink, Col, Row, Container } from 'reactstrap';
 import "../../src/styles.css";
-import {Animated} from "react-animated-css";
+import { Animated } from "react-animated-css";
 import { Link } from "react-router-dom";
 import API from '../utils/API';
 import axios from "axios"
@@ -50,32 +50,17 @@ class Home extends React.Component {
               <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav className="ml-auto" navbar>
 
-                  <NavItem className="nav-item2">
-                  {/* <NavLink>Forum</NavLink> */}
-                    <Link to="/Forum">Forum</Link>
+                  <NavItem>
+                    <NavLink to="/Forum">Forum</NavLink>
                   </NavItem>
 
                   <NavItem>
-                    <NavLink tag ={Link} to="/FAQ/">FAQs</NavLink>
+                    <NavLink tag={Link} to="/FAQ/">FAQs</NavLink>
                   </NavItem>
 
-                  <UncontrolledDropdown nav inNavbar className="nav-item2">
-                    <DropdownToggle nav caret>
-                      Care & Wellness
-                </DropdownToggle>
-                    <DropdownMenu right>
-                      <DropdownItem>
-                      <Link to="/careAware">Care and Awareness</Link>
-                  </DropdownItem>
-                      <DropdownItem>
-                        Option 2
-                  </DropdownItem>
-                      <DropdownItem divider />
-                      <DropdownItem>
-                        Reset
-                  </DropdownItem>
-                    </DropdownMenu>
-                  </UncontrolledDropdown>
+                  <NavItem>
+                    <NavLink tag={Link} to="/CareAndWellness/">Care & Wellness</NavLink>
+                  </NavItem>
 
                   <NavItem>
                     <NavLink tag={Link} to="/VetFinder/">VetFinder</NavLink>
@@ -89,55 +74,59 @@ class Home extends React.Component {
                     <NavLink tag={Link} to="#">Sign Up/Login</NavLink>
                   </NavItem>
 
-                   <NavItem>
-                    <Button onClick={this.handleSignOut}>Logout</Button>
-                  </NavItem>
+                  {/* <NavItem>
+                    <NavLink onClick={this.handleSignOut}>Logout</NavLink>
+                  </NavItem> */}
 
                 </Nav>
               </Collapse>
             </Navbar>
           </div>
-            {/* Navbar end */}
+          {/* Navbar end */}
 
           {/* Jumbotron Text Start */}
+          <Animated animationIn="fadeIn" animationInDelay="5" isVisible={true}>
           <div className="titletext">
             <h1 className="display-3">MyBestFriend</h1>
-            <p className="lead">animal care for animal lovers</p>
+            <p className="lead">animal info for animal lovers</p>
           </div>
+          </Animated>
           {/* Jumbotron Text End */}
         </Jumbotron>
         {/* End of Jumbotron */}
 
 
         {/* Start of Purpose */}
-      <div className="purposeContainer">
+        <div className="purposeContainer">
           <Animated animationIn="fadeInLeft" animationInDelay="2" isVisible={true}>
-        <Container>
-          <Row>
-            <Col m="4" xl="4">
-              <h1>Purpose</h1>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum eaque totam dolore necessitatibus voluptatem provident repellendus porro tempore libero pariatur ratione fugiat minima officia unde architecto, impedit quasi corrupti dicta?</p>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi et maiores cupiditate perferendis quo, molestiae laborum. Consequuntur laboriosam architecto, itaque nesciunt quam dignissimos sit eius, adipisci harum quaerat ipsam quibusdam!</p>
-            </Col>
-            <Col m="8" xl="8"><img src="/images/cat.png" alt="petimage" width="100%"></img></Col>
-          </Row>
-        </Container>
+            <Container>
+              <Row>
+                <Col m="4" xl="4">
+                  <h1>Purpose</h1>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum eaque totam dolore necessitatibus voluptatem provident repellendus porro tempore libero pariatur ratione fugiat minima officia unde architecto, impedit quasi corrupti dicta?</p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi et maiores cupiditate perferendis quo, molestiae laborum. Consequuntur laboriosam architecto, itaque nesciunt quam dignissimos sit eius, adipisci harum quaerat ipsam quibusdam!</p>
+                </Col>
+                <Col m="8" xl="8"><img src="/images/cat.png" alt="petimage" width="100%"></img></Col>
+              </Row>
+            </Container>
           </Animated>
-      </div>
-      {/* End of Purpose */}
+        </div>
+        {/* End of Purpose */}
 
 
 
 
-      {/* Footer Start */}
-      <div className="footer">
-        <Row>
-          <Col id="footerText">
-          FAAT Industries
+        {/* Footer Start */}
+        <div className="footer">
+          <Container>
+            <Row>
+              <Col id="footerText">
+                FAAT Industries
           </Col>
-        </Row>
-      </div>
-      {/* Footer End */}
+            </Row>
+          </Container>
+        </div>
+        {/* Footer End */}
 
       </div>
 

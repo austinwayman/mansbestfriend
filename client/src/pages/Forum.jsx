@@ -4,7 +4,8 @@ import { Button, Modal, Form, FormGroup, Label, ModalHeader, ModalBody, ModalFoo
 import Card from "../components/PostCards/PostCards"
 import ThreadAddBtn from "../components/ThreadAddBtn/ThreadAddBtn"
 import Jumbotron2 from "../components/Jumbotron2";
-import axios from 'axios'
+import axios from 'axios';
+import Footer from "../components/Footer";
 
 
 class Forum extends Component {
@@ -271,6 +272,7 @@ class Forum extends Component {
 
 
 
+                    <Footer />
             </div>
 
         )

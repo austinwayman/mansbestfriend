@@ -6,6 +6,7 @@ import LostDogForm from "../components/LostDogForm/LostForm"
 import ThreadAddBtn from "../components/ThreadAddBtn/ThreadAddBtn"
 import API from "../utils/lostAPI";
 import Jumbotron2 from "../components/Jumbotron2";
+import Footer from "../components/Footer";
 
 class Lost extends Component {
     state = {
@@ -69,12 +70,12 @@ class Lost extends Component {
           return (
               <div>
               <Jumbotron2 page={"Lost & Found"} other={"Find or Post a missing loved one."} />
-              <div classname="d-flex justify-items-center" style={{textAlign: "center"}}>
+              <div className="d-flex justify-items-center" style={{textAlign: "center"}}>
               <Button outline color="info">Add a Lost or Found Pet</Button>{' '}
               </div>
               
                 <LostDogForm/>
-                
+                <Footer />
               </div>   
           )
       }

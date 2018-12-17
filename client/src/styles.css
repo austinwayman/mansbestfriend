@@ -1,6 +1,6 @@
-/* .App {
-    overflow-x: hidden;
-} */
+body {
+    font-size: 18px;
+}
 
 .jumbotron {
     background-image: url("/images/jumbotronBackground.jpg");
@@ -67,10 +67,17 @@
     box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.2);
     height: 100px;
     text-align: center;
+
+    position: relative;
+    margin-top: 50%;
+    bottom:0px;
+    width: 100%;
+    margin: 0;
+  
 }
 
 #footerText {
-    padding: 40px;
+    padding: 36px;
     color: white;
 }
 

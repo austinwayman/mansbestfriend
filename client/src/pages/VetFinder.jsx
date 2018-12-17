@@ -3,7 +3,8 @@ import Jumbotron2 from "../components/Jumbotron2";
 import VetFinderCard from "../components/VetFinderCard";
 import { Button, Modal, Form, FormGroup, Label, ModalHeader, ModalBody, ModalFooter, Input, Container, Row, Col } from 'reactstrap';
 import API from "../utils/API";
-import Yelp from "../components/YelpBtn/yelpbtn"
+import Yelp from "../components/YelpBtn/yelpbtn";
+import Footer from "../components/Footer";
 
 class VetFinder extends Component {
 
@@ -91,6 +92,7 @@ class VetFinder extends Component {
 
                        
                 </Container>
+                <Footer />
             </div>
         )
     }
