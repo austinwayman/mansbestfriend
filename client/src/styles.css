@@ -76,8 +76,11 @@
 
 .forumContainer {
     margin: 50px;
-    background-color: blue;
 }
+
+/* {
+    background-color: blue;
+} */
 
 .cardResize {
     width: 500px;   

@@ -13,7 +13,7 @@ import {
   CardLink
 } from "reactstrap";
 import "./style.css";
-
+import { Animated } from "react-animated-css";
 
 const VetFinderCard = props => {
   return (
