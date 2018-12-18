@@ -5,6 +5,7 @@ import Card from "../components/PostCards/PostCards"
 import ThreadAddBtn from "../components/ThreadAddBtn/ThreadAddBtn"
 import Jumbotron2 from "../components/Jumbotron2";
 import axios from 'axios'
+import "../../src/styles.css";
 
 
 class Forum extends Component {
@@ -147,6 +148,16 @@ class Forum extends Component {
 
     }
 
+    
+  handleSignOut = () => {
+
+    axios.defaults.headers.common['authorization'] = "";
+    localStorage.removeItem("userToken")
+
+    this.props.history.push("/")
+
+  }
+
 
     handleSignOut = () => {
 
@@ -169,6 +180,8 @@ class Forum extends Component {
         return (
 
             <div>
+            
+
                 <div>
                     <Jumbotron2 page={this.Capitalize(this.props.match.params.animal) + " Forum"} other={"Questions asked by users, answered by users"}>
                     </Jumbotron2>
@@ -264,7 +277,7 @@ class Forum extends Component {
         )
 
     }
-
+ 
 }
 
 export default Forum

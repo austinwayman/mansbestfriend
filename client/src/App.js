@@ -11,6 +11,7 @@ import LostAndFound from "./pages/LostAndFound";
 import CareAndWellness from "./pages/CareAndWellness";
 import NoMatch from "./pages/NoMatch";
 import SignUpIn from "./pages/SignIn"
+import Articles from "./pages/CareAndWellness"
 
 
 
@@ -26,9 +27,9 @@ class App extends Component {
           <Route exact path="/forum/:animal" component={Forum} />
           <Route exact path="/posts/:postID" component={Post} />
           <Route exact path="/login-sign" component={SignUpIn} />
-
           <Route exact path="/vetfinder" component={VetFinder} />
           <Route exact path="/lostandfound" component={LostAndFound} />
+          <Route exact path="/careAware" component={Articles} />
           <Route exact path="/faq" component={Faq} />
           <Route component={NoMatch} />
         </Switch>

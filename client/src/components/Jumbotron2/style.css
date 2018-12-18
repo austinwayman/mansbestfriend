@@ -1,0 +1,17 @@
+.display-3 {
+    font-family: 'Bilbo', cursive;
+}
+
+.Neighborhood {
+    width: 1000px; 
+    height: 500px; 
+}
+
+.sub {
+    font-weight: bold; 
+}
+
+.purpose {
+    font-size: 20px;
+    padding-bottom: 70px;
+}

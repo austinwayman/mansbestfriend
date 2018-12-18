@@ -30,9 +30,25 @@ export default {
     return axios.post("/v1/signin", userInfo)
   },
 
-  checkAuth: function (token){
-    return axios.get("/v1/protected", token)
+  checkAuth: function (){
+    return axios.get("/v1/protected");
 
+  },
+
+  logout: function (){
+    return axios.get("/v1/logout")
+  },
+
+  scrapeInitial: function (){
+    return axios.get("/scrape/petOwner")
+  },
+
+  getThatArticle: function (link) {
+    return axios.post("/scrape/article", {url: link})
+  },
+
+  findVet: function (location){
+    return axios.get("/api/yelp/" + location)
   }
 
 };

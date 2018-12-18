@@ -1,8 +1,11 @@
 import React from 'react';
-import { Jumbotron, Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem, Col, Row, Container } from 'reactstrap';
+import { Jumbotron, Button, Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem, Col, Row, Container } from 'reactstrap';
 import "../../src/styles.css";
 import {Animated} from "react-animated-css";
 import { Link } from "react-router-dom";
+import API from '../utils/API';
+import axios from "axios"
+import Footer from "../components/Footer";
 
 
 class Home extends React.Component {
@@ -19,6 +22,16 @@ class Home extends React.Component {
       isOpen: !this.state.isOpen
     });
   }
+
+  handleSignOut = () => {
+
+    axios.defaults.headers.common['authorization'] = "";
+
+    this.props.history.push("/")
+
+  }
+
+
   render() {
     return (
       <div className="App">
@@ -38,8 +51,9 @@ class Home extends React.Component {
               <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav className="ml-auto" navbar>
 
-                  <NavItem>
-                    <NavLink tag ={Link} to="/Forum">Forum</NavLink>
+                  <NavItem className="nav-item2">
+                  {/* <NavLink>Forum</NavLink> */}
+                    <Link to="/Forum">Forum</Link>
                   </NavItem>
 
                   <NavItem>
@@ -52,7 +66,7 @@ class Home extends React.Component {
                 </DropdownToggle>
                     <DropdownMenu right>
                       <DropdownItem>
-                        Option 1
+                      <Link to="/careAware">Care and Awareness</Link>
                   </DropdownItem>
                       <DropdownItem>
                         Option 2
@@ -76,6 +90,10 @@ class Home extends React.Component {
                     <NavLink tag={Link} to="#">Sign Up/Login</NavLink>
                   </NavItem>
 
+                   <NavItem>
+                    <Button onClick={this.handleSignOut}>Logout</Button>
+                  </NavItem>
+
                 </Nav>
               </Collapse>
             </Navbar>
@@ -94,32 +112,42 @@ class Home extends React.Component {
 
         {/* Start of Purpose */}
       <div className="purposeContainer">
-          <Animated animationIn="fadeInLeft" animationInDelay="2" isVisible={true}>
+          <Animated animationIn="fadeInLeft" animationInDelay={2} isVisible={true}>
         <Container>
           <Row>
             <Col m="4" xl="4">
-              <h1>Purpose</h1>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum eaque totam dolore necessitatibus voluptatem provident repellendus porro tempore libero pariatur ratione fugiat minima officia unde architecto, impedit quasi corrupti dicta?</p>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi et maiores cupiditate perferendis quo, molestiae laborum. Consequuntur laboriosam architecto, itaque nesciunt quam dignissimos sit eius, adipisci harum quaerat ipsam quibusdam!</p>
+              <h1 className= "sub">Our Purpose</h1>
+              <p className= "purpose">MyBestFriend is an online community designed as a support for parenting our beloved pets. Many members have experienced what it's like to bring a furry best friend home for the first time. We know about all the unknown's that may happen. Many know what it's like to have thier pet show unusual signs of possible sickness or behavioral problems. Many have found thier lost pet utulizing our site as well. Make sure to register in order to utulize all the benefits of the community and actively participate in the forum discussions. We openly welcome you to our online pet-parenthood neighborhood! </p>
             </Col>
-            <Col m="8" xl="8"><img src="/images/Cat-looking-at-dog.png" alt="petimage" width="100%"></img></Col>
+            <Col m="8" xl="8"><img className= "Neighborhood" src="/images/Cat-looking-at-dog.png" alt="petimage" width="100%"></img></Col>
           </Row>
         </Container>
           </Animated>
       </div>
       {/* End of Purpose */}
 
-
-
+      <div> 
+      <Footer/>
+      </div>
 
       {/* Footer Start */}
-      <div className="footer">
+      {/* <div className="footer">
         <Row>
           <Col id="footerText">
           FAAT Industries
+          <div class="row">
+                <div class="col">
+                    <div class="icons">
+                        <i class="fab fa-facebook-square"></i>
+                        <i class="fab fa-twitter-square"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-youtube-square"></i>
+                    </div>
+                </div>
+            </div>
           </Col>
         </Row>
-      </div>
+      </div> */}
       {/* Footer End */}
 
       </div>

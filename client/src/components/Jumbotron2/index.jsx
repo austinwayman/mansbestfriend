@@ -4,6 +4,7 @@ import { Jumbotron } from 'reactstrap';
 import Nav2 from "../../components/Nav";
 import { Link } from "react-router-dom";
 import {Animated} from "react-animated-css";
+import "./style.css";
 
 
 class Jumbotron2 extends React.Component {
@@ -21,14 +22,14 @@ class Jumbotron2 extends React.Component {
       <div id="logoAlign"><Link to="/">
       <img src="/images/logo_transparent.png" alt="Mylogo" id="logoimg"></img>
       </Link></div>
-
+      {/* animationInDelay="5" */}
     <Nav2 />
-    <Animated animationIn="fadeIn" animationInDelay="5" isVisible={true}>
+    {/* <Animated animationIn="fadeIn" isVisible={true}> */}
       <div className="title">
         <h1 className="display-3">{this.props.page}</h1>
         <p className="lead">{this.props.other}</p>
       </div>
-      </Animated>
+      {/* </Animated> */}
     </Jumbotron>
     </div>
   );

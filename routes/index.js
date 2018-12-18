@@ -5,6 +5,9 @@ const router = require("express").Router();
 router.use("/", require("./api"));
 
 router.use("/v1", require("./v1"));
+
+router.use("/scrape", require("./scarping"));
+
 router.use(require("./forumInitial"))
 
 module.exports = router;
