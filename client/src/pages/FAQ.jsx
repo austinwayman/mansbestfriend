@@ -26,7 +26,6 @@ class FAQ extends React.Component {
                   <Nav2 />
               </Jumbotron2>
               <FAQinfo />
-              <Footer/>
               </div>
               
           )

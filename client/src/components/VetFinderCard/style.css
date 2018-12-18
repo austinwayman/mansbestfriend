@@ -1,26 +1,15 @@
-.tiff {
-  height: 80px;
+.clinic {
+  height: 50px;
   background-color: #e3d098; 
 }
 
-.bird {
+.cards {
   font-size: 20px; 
   color: #10a5b8;
   font-weight: bold; 
   text-align: center; 
-  
 }
 
-/* .yelpImage {
-  height: 200px; 
-  width: 300px; 
-} */
-
-img,
-{
- width: 100%;
- transition: all 0.3s ease 0s;
-}
 
 .box5 .icon li a {
  text-align: center;
@@ -89,12 +78,6 @@ body {
  display: inline-block;
 }
 
-
-/*********************** Demo - 5 *******************/
-.myImg{
-    width: 318px;
-    height: 180px
-}
 .box5 {
  background: #444;
  position: relative;
@@ -125,8 +108,10 @@ body {
  transition-delay: 0.15s;
 }
 .box5 img {
- width: 100%;
- height: auto;
+  width: 400px; 
+  height: 300px; 
+ /* width: 100%;
+ height: auto; */
  transition: all 0.35s ease-out 0s;
 }
 .box5:hover img {
@@ -145,7 +130,6 @@ body {
  transform: scale(1);
  transition-delay: 0.15s;
 }
-
 
 .box5 .icon li a {
  display: block;

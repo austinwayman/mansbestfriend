@@ -90,7 +90,7 @@ class VetFinder extends Component {
 
                        
                 </Container>
-                <Footer/>
+                {/* <Footer/> */}
             </div>
         )
     }
