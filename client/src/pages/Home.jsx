@@ -4,8 +4,7 @@ import "../../src/styles.css";
 import { Animated } from "react-animated-css";
 import { Link } from "react-router-dom";
 import API from '../utils/API';
-import axios from "axios"
-import Footer from "../components/Footer";
+import axios from "axios";
 
 
 class Home extends React.Component {
@@ -60,7 +59,7 @@ class Home extends React.Component {
                   </NavItem>
 
                   <NavItem>
-                    <NavLink tag={Link} to="/CareAndWellness/">Care & Wellness</NavLink>
+                    <NavLink tag={Link} to="/CareAware/">Care & Wellness</NavLink>
                   </NavItem>
 
                   <NavItem>

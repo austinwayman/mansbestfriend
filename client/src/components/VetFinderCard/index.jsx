@@ -47,6 +47,23 @@ const VetFinderCard = props => {
       </div>
     </div>
    
+    
+      
+      <Card>
+        <CardBody>
+          <CardTitle>{props.name}</CardTitle>
+          {/* <CardSubtitle>Title: {props.title}</CardSubtitle> */}
+          <CardSubtitle>Rating: {props.rating}</CardSubtitle>
+        </CardBody>
+        <img className="myImg" src={props.image} alt="Card image cap" />
+        <CardBody>
+          <CardText>Address: {props.address}</CardText>
+          <CardText>Phone: {props.phone}</CardText>
+          <CardLink href={props.link}>Go to their website</CardLink>
+        </CardBody>
+      </Card>
+  
+  
   );
 };
 
