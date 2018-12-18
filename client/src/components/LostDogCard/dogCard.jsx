@@ -2,6 +2,9 @@ import React from "react";
 
 
 export function LostDogCard(props) {
+    const {
+        image
+    } = props
     return (
         <div>
             <div className="row">
