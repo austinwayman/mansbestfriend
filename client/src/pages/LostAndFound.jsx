@@ -6,6 +6,7 @@ import LostDogForm from "../components/LostDogForm/LostForm"
 import ThreadAddBtn from "../components/ThreadAddBtn/ThreadAddBtn"
 import API from "../utils/lostAPI";
 import Jumbotron2 from "../components/Jumbotron2";
+import Footer from "../components/Footer";
 import "../../src/styles.css";
 
 class Lost extends Component {
