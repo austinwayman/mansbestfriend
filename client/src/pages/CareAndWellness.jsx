@@ -12,7 +12,8 @@ class Articles extends Component {
     state = {
         articles: [],
         singleArticle: [],
-        modal: false
+        modal: false,
+        backdrop: true
     }
 
     componentDidMount = () => {
@@ -107,7 +108,7 @@ class Articles extends Component {
                     <Modal isOpen={this.state.modal} className={this.props.className} backdrop={this.state.backdrop}>
                         <ModalHeader toggle={this.toggle} close={closeBtn}>
                        </ModalHeader>
-                        <ModalBody toggle={this.toggle} close={closeBtn}>
+                        <ModalBody>
 
                             {
                                 <div dangerouslySetInnerHTML={{ __html: this.state.singleArticle.article }} />
