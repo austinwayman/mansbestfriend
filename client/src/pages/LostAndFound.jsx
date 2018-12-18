@@ -69,8 +69,10 @@ class Lost extends Component {
         console.log(this.state.list)
         return (
             <div>
-                <Jumbotron2 page={"Lost & Found"} other={"Find or Post a missing loved one."} />
-                <div className="d-flex justify-items-center" style={{ textAlign: "center" }}>
+                <Jumbotron2 page={"Lost & Found"} other={"Find or Post a missing loved one"} />
+
+
+                <div classname="d-flex justify-items-center" style={{ textAlign: "center" }}>
                     <Button outline color="info">Add a Lost or Found Pet</Button>{' '}
                 </div>
                 <Modal isOpen={false}>
@@ -124,7 +126,7 @@ class Lost extends Component {
 
 
 
-
+<Footer />
             </div>
         )
     }

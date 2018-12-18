@@ -90,11 +90,33 @@ body {
     margin: 50px;
 }
 
-/* {
-    background-color: blue;
-} */
 
 .cardResize {
     width: 500px;   
     height:500px
 }
+
+.modal {
+    text-align: center;
+    padding: 0!important;
+    
+    }
+    
+    .modal-content{
+        width: 1000px;
+    }
+    .modal:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -500px;
+    /* margin-top: 100px; */
+    }
+    
+    .modal-dialog {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+    margin-top: 515px;
+    }
