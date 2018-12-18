@@ -15,7 +15,7 @@ export function ArticleCard(props) {
                     <div className="card-body">
                         <h5 className="card-title">{props.title}</h5>
                         <p className="card-text">{props.summary}</p>
-                        <Button value ={props.link} onClick={props.toggle}>Learn More</Button>
+                        <Button className="crdColor" value ={props.link} onClick={props.toggle}>Learn More</Button>
                     </div>
                 </div>
 

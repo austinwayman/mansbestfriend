@@ -71,54 +71,55 @@ class Articles extends Component {
 
 
                 {/* Navbar Start */}
-                <Container>
-                    <Button value="0" onClick={this.changeArticles}>New Pet Owners</Button>
-                    <Button value="1" onClick={this.changeArticles}>Basic Pet Care</Button>
-                    <Button value="2" onClick={this.changeArticles}>Pet Nutrition</Button>
-                    <Button value="3" onClick={this.changeArticles}>Pet Care Tips</Button>
-                    <Button value="4" onClick={this.changeArticles}>Prevent Lost of Pets</Button>
-                </Container>
-                {/* Navbar End */}
+                <div className="articleBody">
+                    <Container className="articleTopics">
+                        <Button className="btnSpace" value="0" onClick={this.changeArticles}>New Pet Owners</Button>
+                        <Button className="btnSpace" value="1" onClick={this.changeArticles}>Basic Pet Care</Button>
+                        <Button className="btnSpace" value="2" onClick={this.changeArticles}>Pet Nutrition</Button>
+                        <Button className="btnSpace" value="3" onClick={this.changeArticles}>Pet Care Tips</Button>
+                        <Button className="btnSpace" value="4" onClick={this.changeArticles}>Prevent Lost of Pets</Button>
+                    </Container>
+                    {/* Navbar End */}
 
-            {/* Articles Start */}
-                <Container>
-                    <Row>
-                        {this.state.articles.map(article => {
-                            return (
-                                <Col>
-                                    <ArticleCard
-                                        image={article.image}
-                                        title={article.title}
-                                        summary={article.summary}
-                                        link={article.link}
-                                        toggle={this.toggle} />
-                                </Col>
-                            )
-                        })
-                        }
-                    </Row>
-                </Container>
-                {/* Articles End */}
+                    {/* Articles Start */}
+                    <Container>
+                        <Row>
+                            {this.state.articles.map(article => {
+                                return (
+                                    <Col>
+                                        <ArticleCard
+                                            image={article.image}
+                                            title={article.title}
+                                            summary={article.summary}
+                                            link={article.link}
+                                            toggle={this.toggle} />
+                                    </Col>
+                                )
+                              })
+                            }
+                        </Row>
+                    </Container>
+                    {/* Articles End */}
 
 
 
-                {/* Modal Start */}
-                <Modal isOpen={this.state.modal} className={this.props.className} backdrop={this.state.backdrop}>
-                    <ModalHeader toggle={this.toggle} close={closeBtn}></ModalHeader>
-                    <ModalBody>
+                    {/* Modal Start */}
+                    <Modal isOpen={this.state.modal} className={this.props.className} backdrop={this.state.backdrop}>
+                        <ModalHeader toggle={this.toggle} close={closeBtn}>
+                       </ModalHeader>
+                        <ModalBody toggle={this.toggle} close={closeBtn}>
 
-                        {
-                            <div dangerouslySetInnerHTML={{ __html: this.state.singleArticle.article }} />
+                            {
+                                <div dangerouslySetInnerHTML={{ __html: this.state.singleArticle.article }} />
+                            }
 
-                        }
-
-                    </ModalBody>
-                    <ModalFooter>
-                        <Button color="secondary" onClick={this.toggleClose}>Close</Button>
-                    </ModalFooter>
-                </Modal>
-                {/* Modal End */}
-
+                        </ModalBody>
+                        <ModalFooter>
+                            <Button  onClick={this.toggleClose}>Close</Button>
+                        </ModalFooter>
+                    </Modal>
+                    {/* Modal End */}
+                </div>
 
                 <Footer />
             </div>

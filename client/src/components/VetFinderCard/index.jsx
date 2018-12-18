@@ -21,8 +21,8 @@ const VetFinderCard = props => {
       
       <Card>
         <CardBody>
-          <CardTitle>Hostital: {props.name}</CardTitle>
-          <CardSubtitle>Title: {props.title}</CardSubtitle>
+          <CardTitle>{props.name}</CardTitle>
+          {/* <CardSubtitle>Title: {props.title}</CardSubtitle> */}
           <CardSubtitle>Rating: {props.rating}</CardSubtitle>
         </CardBody>
         <img className="myImg" src={props.image} alt="Card image cap" />
