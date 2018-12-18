@@ -1,8 +1,20 @@
 
 .overall{
-    width: 18rem
+    width: 350px;
+    height: 400px;
+    /* padding: 10px; */
+    margin-bottom: 25px;
+    
 }
 
 .crdColor {
     background-color: #8CCCCB
+}
+
+p {
+    font-size: 16px;
+}
+
+h4 {
+    font-size: 20px;
 }
