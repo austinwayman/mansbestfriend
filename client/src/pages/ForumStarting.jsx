@@ -6,6 +6,7 @@ import {
     Container, Row, Col
 } from 'reactstrap';
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 
 
 class ForumPage extends Component {
@@ -43,7 +44,7 @@ class ForumPage extends Component {
                     </Container>
                 </div>
                 {/* Forum Container End */}
-
+<Footer />
             </div>
         )
     }
