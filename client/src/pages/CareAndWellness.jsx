@@ -20,7 +20,15 @@ class Articles extends Component {
     }
 
     getArticles = () => {
-        API.scrapeInitial().then(result => this.setState({ articles: result.data }))
+        API.scrapeInitial(0).then(result => this.setState({ articles: result.data }))
+    }
+
+    changeArticles = (e) => {
+
+        const{value} = e.target
+
+        API.scrapeInitial(value).then(result => this.setState({ articles: result.data }))
+
     }
 
     toggle = (event) => {
@@ -50,6 +58,14 @@ class Articles extends Component {
         return (
 
             <div>
+
+                <Container>
+                    <Button value = "0" onClick={this.changeArticles}>New Pet Owners</Button>
+                    <Button value = "1" onClick={this.changeArticles}>Basic Pet Care</Button>
+                    <Button value = "2" onClick={this.changeArticles}>Pet Nutrition</Button>
+                    <Button value = "3" onClick={this.changeArticles}>Pet Care Tips</Button>
+                    <Button value = "4" onClick={this.changeArticles}>Prevent Lost of Pets</Button>
+                </Container>
 
                 <Container>
 

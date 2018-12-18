@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ForumPage from "./pages/ForumStarting"
 import Forum from "./pages/Forum"
-import Post from "./pages/Posting"
+import Post from "./pages/Posting/Posting"
 import Home from "./pages/Home";
 import Faq from "./pages/FAQ";
 import VetFinder from "./pages/VetFinder";

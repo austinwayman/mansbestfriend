@@ -39,8 +39,8 @@ export default {
     return axios.get("/v1/logout")
   },
 
-  scrapeInitial: function (){
-    return axios.get("/scrape/petOwner")
+  scrapeInitial: function (index){
+    return axios.get("/scrape/petOwner/" + index)
   },
 
   getThatArticle: function (link) {

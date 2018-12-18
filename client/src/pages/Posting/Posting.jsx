@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import API from "../utils/API";
-import Posting from "../components/Posting/posting"
-import CommentCard from "../components/CommentCard/commentcard"
-import Input from "../components/Input/Input"
+import API from "../../utils/API";
+import Posting from "../../components/Posting/posting"
+import CommentCard from "../../components/CommentCard/commentcard"
+import Input from "../../components/Input/Input"
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import Axios from "axios";
+import "./posting.css"
 
 class Post extends Component {
   state = {
@@ -94,7 +95,7 @@ class Post extends Component {
 
       <div>
 
-        <div className="container">
+        <div className="container cont">
 
           {
 
@@ -169,7 +170,7 @@ class Post extends Component {
                                     comments2.comment3.map(comments3 => {
 
                                       return (
-                                        <CommentCard className="comment13" name={comments3.name} comment={comments3.comment} />
+                                        <CommentCard className="comment13" name={comments3.name} comment={comments3.comment} className1="displayOff" />
                                       )
 
 
