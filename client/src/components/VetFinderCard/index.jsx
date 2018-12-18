@@ -20,10 +20,8 @@ const VetFinderCard = props => {
       <div class="row mt-30">
         <div class="col-md-4 col-sm-6">
           <div class="box5">
-          
             <img className= "yelpImage" 
             src={props.image} />
-
             <ul class="icon">
               <li>
                 {" "}
@@ -38,32 +36,11 @@ const VetFinderCard = props => {
             <a href={props.url}>Enter Site</a>
             </div>
           </div>
-         
           <CardBody className="clinic"><CardText className="cards">{props.name}</CardText>
-          </CardBody>
-                
+          </CardBody>  
         </div>
-
       </div>
     </div>
-   
-    
-      
-      <Card>
-        <CardBody>
-          <CardTitle>{props.name}</CardTitle>
-          {/* <CardSubtitle>Title: {props.title}</CardSubtitle> */}
-          <CardSubtitle>Rating: {props.rating}</CardSubtitle>
-        </CardBody>
-        <img className="myImg" src={props.image} alt="Card image cap" />
-        <CardBody>
-          <CardText>Address: {props.address}</CardText>
-          <CardText>Phone: {props.phone}</CardText>
-          <CardLink href={props.link}>Go to their website</CardLink>
-        </CardBody>
-      </Card>
-  
-  
   );
 };
 
