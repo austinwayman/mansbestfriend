@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { Button, Modal, Form, FormGroup, Label, ModalHeader, ModalBody, ModalFooter, Input, Container, Row, Col } from 'reactstrap';
-
-import Card from "../components/LostDogCard/dogCard"
+import LostDogCard from "../components/LostDogCard/dogCard"
 import LostDogForm from "../components/LostDogForm/LostForm"
 import ThreadAddBtn from "../components/ThreadAddBtn/ThreadAddBtn"
 import API from "../utils/lostAPI";
 import Jumbotron2 from "../components/Jumbotron2";
+import Footer from "../components/Footer";
 import "../../src/styles.css";
 
 class Lost extends Component {
@@ -114,7 +114,7 @@ class Lost extends Component {
                         {
                             this.state.list.map(post => {
                                 return (
-                                    <Card name={post.name} breed={post.breed} description={post.description} image={post.image} contact={post.contact}/>
+                                    <LostDogCard name={post.name} breed={post.breed} description={post.description} image={post.image} contact={post.contact}/>
                                 )
                             })
 

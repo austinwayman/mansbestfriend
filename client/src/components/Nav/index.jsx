@@ -1,5 +1,5 @@
 import React from "react";
-import { Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem, } from 'reactstrap';
+import { Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink } from 'reactstrap';
 import { Link } from "react-router-dom";
 // import "./style.css";
 
@@ -11,8 +11,6 @@ function Nav2() {
         <Nav className="ml-auto" navbar>
 
           <NavItem>
-           <NavLink>Forum</NavLink> 
-            {/* <NavLink> <Link to="/Forum/">Forum</Link> </NavLink> */}
             <NavLink tag={Link} to="/Forum/">Forum</NavLink>
           </NavItem>
 
@@ -20,23 +18,9 @@ function Nav2() {
             <NavLink tag={Link} to="/FAQ/">FAQs</NavLink>
           </NavItem>
 
-          <UncontrolledDropdown nav inNavbar>
-            <DropdownToggle nav caret>
-              Care & Wellness
-          </DropdownToggle>
-            <DropdownMenu right>
-              <DropdownItem>
-                <Link to="/careAware">Care and Awareness</Link>
-            </DropdownItem>
-              <DropdownItem>
-                Option 2
-            </DropdownItem>
-              <DropdownItem divider />
-              <DropdownItem>
-                Reset
-            </DropdownItem>
-            </DropdownMenu>
-          </UncontrolledDropdown>
+          <NavItem>
+            <NavLink tag={Link} to="/CareAndWellness/">Care & Wellness</NavLink>
+          </NavItem>
 
           <NavItem>
             <NavLink tag={Link} to="/vetfinder/">VetFinder</NavLink>

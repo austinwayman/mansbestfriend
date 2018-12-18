@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 
 import { Button, Modal, Form, FormGroup, Label, ModalHeader, ModalBody, ModalFooter, Input, Container, Row, Col } from 'reactstrap';
 import API from "../utils/API";
-import Yelp from "../components/YelpBtn/yelpbtn"
+
 
 class VetFinder extends Component {
 

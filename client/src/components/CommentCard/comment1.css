@@ -9,3 +9,11 @@
 .comment13{
     margin-left : 150px;
 }
+
+.displayOn{
+    display: block
+}
+
+.displayOff{
+    display:none
+}

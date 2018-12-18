@@ -1,7 +1,7 @@
 import React from 'react';
 import Jumbotron2 from "../components/Jumbotron2";
 import Nav2 from "../components/Nav";
-import FAQinfo from "../components/FAQinfo"
+import FAQinfo from "../components/FAQinfo";
 import Footer from "../components/Footer";
 
 
@@ -26,6 +26,7 @@ class FAQ extends React.Component {
                   <Nav2 />
               </Jumbotron2>
               <FAQinfo />
+              <Footer />
               </div>
               
           )

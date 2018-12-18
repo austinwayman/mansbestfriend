@@ -4,11 +4,17 @@ var cheerio = require("cheerio");
 
 
 
-router.get("/petOwner", function (req, res){
+router.get("/petOwner/:index", function (req, res){
+
+    var articleIndex = req.params.index
 
     var resultarr= []
-    
-    axios.get("http://www.mypet.com/new-pet-owner.aspx")
+
+    var articleArr = ["http://www.mypet.com/new-pet-owner.aspx", "http://www.mypet.com/basic-pet-care.aspx", "http://www.mypet.com/pet-nutrition.aspx", 
+                    
+    "http://www.mypet.com/pet-care-tips.aspx", "http://www.mypet.com/prevent-lost-pets.aspx"]
+   
+    axios.get(articleArr[articleIndex])
     .then( response => {
         
         var $ = cheerio.load(response.data)
