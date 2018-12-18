@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import Jumbotron2 from "../components/Jumbotron2";
 import VetFinderCard from "../components/VetFinderCard";
+import { Collection } from "mongoose";
+import Footer from "../components/Footer";
+
 import { Button, Modal, Form, FormGroup, Label, ModalHeader, ModalBody, ModalFooter, Input, Container, Row, Col } from 'reactstrap';
 import API from "../utils/API";
 
@@ -42,8 +45,8 @@ class VetFinder extends Component {
                 <Jumbotron2 page={"VetFinder"} other={"Finding Vets for checkups or emergencies."} />
 
                 <Container>
-
-
+                    <Row> 
+                    <Col sm="2">
                     <Form>
                         <FormGroup>
                             <Input
@@ -53,23 +56,22 @@ class VetFinder extends Component {
                                 placeholder="Enter zipcode here to search for closest vets"
                             />
                         </FormGroup>
-                      
+                    
                      <Button onClick={this.handleYelpSubmit}>
                         Search </Button>{' '}
                         </Form>
+                        </Col>
+                        </Row>
+               
 
                      <Row>
-
-
-
+            
                      {
                          this.state.yelp.map(yelp => {
 
 
                             return(
-
-                                
-                                    <Col>
+                                    <Col md={4}>
                                      <VetFinderCard 
                                      name={yelp.name}
                                      title={yelp.categories[0].title}
@@ -78,10 +80,7 @@ class VetFinder extends Component {
                                      address={yelp.location.address1 + ", " + yelp.location.address2 + ", " + yelp.location.city + ", " + yelp.location.country}
                                      phone={yelp.phone}
                                      link={yelp.url}/>
-                                    </Col>
-                                
-
-
+                                    </Col>  
                             )
 
                          })
@@ -91,6 +90,7 @@ class VetFinder extends Component {
 
                        
                 </Container>
+                {/* <Footer/> */}
             </div>
         )
     }

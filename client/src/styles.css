@@ -28,19 +28,23 @@ body {
 .jumbotron2 .title {
     text-align: center;
     margin-top: 10%;
+    
 }
 .title {
     height: 750px;
     text-align: center;
+    font-family: 'Bilbo', cursive;
 
 }
 
 .title2 {
     text-align: center;
     margin-top: 150px;
+    font-family: 'Bilbo', cursive;
 }
 .titletext {
     margin-top: 17%;
+    
 }
 #navbarthick {
     margin: 0;
