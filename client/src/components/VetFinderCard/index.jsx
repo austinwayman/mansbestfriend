@@ -15,18 +15,18 @@ const VetFinderCard = props => {
           <div class="box5">
             <img className= "yelpImage" 
             src={props.image} />
-            <ul class="icon">
+            <ul class="icon listitem">
               <li>
-                {" "}
-                <a href={props.phone} i class="fas fa-mobile-alt" />
+
+                <span><i class="fas fa-mobile-alt" /> {props.phone}</span> 
               </li>
               <li>
-                {" "}
-                <a href={props.location} i class="fas fa-home" />
+    
+                <span><i class="fas fa-home" /> {props.address}</span> 
               </li>
             </ul>
             <div class="box-content card-title title">
-            <a href={props.url}>Enter Site</a>
+            <a href={props.link}>Enter Site</a>
             </div>
           </div>
           <CardBody className="clinic"><CardText className="cards">{props.name}</CardText>
