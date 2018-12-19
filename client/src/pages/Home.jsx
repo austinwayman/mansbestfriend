@@ -22,13 +22,7 @@ class Home extends React.Component {
     });
   }
 
-  handleSignOut = () => {
 
-    axios.defaults.headers.common['authorization'] = "";
-
-    this.props.history.push("/")
-
-  }
 
 
   render() {
@@ -51,7 +45,7 @@ class Home extends React.Component {
                 <Nav className="ml-auto" navbar>
 
                   <NavItem>
-                    <NavLink tag={Link} to="/Forum/">Forum</NavLink>
+                    <NavLink tag={Link} to="/Forum">Forum</NavLink>
                   </NavItem>
 
                   <NavItem>
@@ -71,12 +65,8 @@ class Home extends React.Component {
                   </NavItem>
 
                   <NavItem>
-                    <NavLink tag={Link} to="#">Sign Up/Login</NavLink>
+                    <NavLink tag={Link} to="/login-sign">Sign Up/Login</NavLink>
                   </NavItem>
-
-                  {/* <NavItem>
-                    <NavLink onClick={this.handleSignOut}>Logout</NavLink>
-                  </NavItem> */}
 
                 </Nav>
               </Collapse>

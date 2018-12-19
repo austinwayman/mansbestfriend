@@ -3,9 +3,9 @@ import API from "../utils/API";
 import { Button, Modal, Form, FormGroup, Label, ModalHeader, ModalBody, ModalFooter, Input, Container, Row, Col } from 'reactstrap';
 import Card from "../components/PostCards/PostCards"
 import ThreadAddBtn from "../components/ThreadAddBtn/ThreadAddBtn"
-import Jumbotron2 from "../components/Jumbotron2";
+import Jumbotron2 from "../components/Jumbotron2/index";
 import axios from 'axios';
-import Footer from "../components/Footer";
+import Footer from "../components/Footer/index";
 import "../../src/styles.css";
 
 
@@ -149,16 +149,6 @@ class Forum extends Component {
 
     }
 
-    
-  handleSignOut = () => {
-
-    axios.defaults.headers.common['authorization'] = "";
-    localStorage.removeItem("userToken")
-
-    this.props.history.push("/")
-
-  }
-
 
     handleSignOut = () => {
 
@@ -168,6 +158,7 @@ class Forum extends Component {
         this.props.history.push("/")
 
     }
+
 
 
     /* end button navs */
@@ -181,18 +172,10 @@ class Forum extends Component {
         return (
 
             <div>
-            
 
-                <div>
                     <Jumbotron2 page={this.Capitalize(this.props.match.params.animal) + " Forum"} other={"Questions asked by users, answered by users"}>
                     </Jumbotron2>
-                </div>
-
-
-                <div className="forumContainer">
-
-
-
+           
 
                     <div>
                         <Modal isOpen={this.state.modal} toggle={this.toggle}>
@@ -233,53 +216,62 @@ class Forum extends Component {
                         </Modal>
                     </div>
 
+                    <div className="articleBody">
+
+                        <Container className="articleTopics">
+
+                            <ThreadAddBtn toggle={this.toggle} />
+                            <Button color="secondary" value="Health and Nutrition" onClick={this.healthAndNut}>Health and Nutrition</Button>
+                            <Button color="secondary" value="Pet Training" onClick={this.petTraining}>Pet Training</Button>
+                            <Button color="secondary" value="Breeding" onClick={this.breeding}>Breeding</Button>
+                            <Button color="secondary" value="Rescue & Adoption" onClick={this.rescueAndAdop}>Rescue & Adoption</Button>
+                            <Button color="secondary" value="Shows & Events" onClick={this.showsAndEvents}>Shows & Events</Button>
+                        </Container>
+
+                    </div>
+
+
+
+
                     <Container>
-                        <Row>
-                            <Col xl="6">
-                                <p><Button color="secondary" value="Health and Nutrition" onClick={this.healthAndNut}>Health and Nutrition</Button></p>
-                                <p><Button color="secondary" value="Pet Training" onClick={this.petTraining}>Pet Training</Button></p>
-                                <p><Button color="secondary" value="Breeding" onClick={this.breeding}>Breeding</Button></p>
-                                <p><Button color="secondary" value="Rescue & Adoption" onClick={this.rescueAndAdop}>Rescue & Adoption</Button></p>
-                                <p><Button color="secondary" value="Shows & Events" onClick={this.showsAndEvents}>Shows & Events</Button></p>
-                                <p> <ThreadAddBtn toggle={this.toggle} /></p>
-                                <p> <Button onClick={this.handleSignOut}>Logout</Button></p>
-                               
+            
+                                    <div class="table100">
+                                        <table>
+                                            <thead>
+                                                <tr class="table100-head">
+                                                    <th class="column1">Title</th>
+                                                    <th class="column2">Category</th>
+                                                    <th class="column3">Content</th>
+                                                    <th class="column8">Thread</th>
+                                                </tr>
+                                            </thead>
+
+                                            {
+
+                                                this.state.posts.map(post => {
+
+                                                    return (
+                                                        <Card title={post.title} category={post.category} content={post.content} id={post._id} />
+                                                    )
+                                                })
+
+                                            }
+
+                                        </table>
+                                    </div>
+                    
+                     
+                  </Container>
 
 
-                       
-
-                            </Col>
-                            <Col xl="6">
-
-                                {
-
-                                    this.state.posts.map(post => {
-
-                                        return (
-                                            <Card title={post.title} category={post.category} content={post.content} id={post._id} />
-                                        )
-                                    })
-
-                                }
-
-                            </Col>
-                        </Row>
-                    </Container>
-                </div>
-
-
-
-
-
-
-
-                    <Footer />
+                <Footer />
             </div>
 
+        
         )
 
     }
- 
+
 }
 
 export default Forum
