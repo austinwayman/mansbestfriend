@@ -6,7 +6,7 @@ function FAQinfo() {
   return (
     <Container>
       <Row>
-        <Col className="header">Pet Care FAQs</Col>
+        {/* <Col className="header">Pet Care</Col> */}
       </Row>
 
       <Row className="space" />

@@ -22,7 +22,7 @@ class FAQ extends React.Component {
       render () {
           return (
               <div>
-               <Jumbotron2 page={"FAQ"} other={"this is the FAQ page"} >
+               <Jumbotron2 page={"FAQ"} other={"Frequently Asked Questions"} >
                   <Nav2 />
               </Jumbotron2>
               <FAQinfo />

@@ -13,9 +13,10 @@ export function ArticleCard(props) {
             <div className="card overall">
                 <img className="card-img-top articleimg" src={props.image} alt="Card image cap" />
                     <div className="card-body">
-                        <h5 className="card-title">{props.title}</h5>
+                        <h4 className="card-title">{props.title}</h4>
+                        <hr />
                         <p className="card-text">{props.summary}</p>
-                        <Button value ={props.link} onClick={props.toggle}>Learn More</Button>
+                        <Button className="crdColor" value ={props.link} onClick={props.toggle}>Learn More</Button>
                     </div>
                 </div>
 

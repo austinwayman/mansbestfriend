@@ -19,7 +19,7 @@ function Nav2() {
           </NavItem>
 
           <NavItem>
-            <NavLink tag={Link} to="/CareAndWellness/">Care & Wellness</NavLink>
+            <NavLink tag={Link} to="/CareAware/">Care & Wellness</NavLink>
           </NavItem>
 
           <NavItem>
