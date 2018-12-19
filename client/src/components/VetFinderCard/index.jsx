@@ -25,7 +25,7 @@ const VetFinderCard = props => {
                 <span><i class="fas fa-home" /> {props.address}</span> 
               </li>
             </ul>
-            <div class="box-content card-title title">
+            <div className="box-content card-title title bam">
             <a href={props.link}>Enter Site</a>
             </div>
           </div>

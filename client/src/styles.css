@@ -99,6 +99,14 @@ body {
     height:500px
 }
 
+
+.overall{
+  width: 350px;
+  height: 400px;
+  /* padding: 10px; */
+  margin-bottom: 25px;
+  
+}
 .modal {
     text-align: center;
     padding: 0!important;
@@ -135,6 +143,8 @@ body {
         padding-right: 18%;
         
     }
+
+    
 
     .btnSpace {
         margin-right: 10px;

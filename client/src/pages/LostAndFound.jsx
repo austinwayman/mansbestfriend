@@ -101,8 +101,8 @@ class Lost extends Component {
                                 <Input type="textarea" name="description" value={this.state.description} onChange={this.handleChanges} />
                             </FormGroup>
                             <FormGroup>
-                                <Label for="file">File</Label>
-                                <Input type="file" name="file" value={this.state.image} onChange={this.handleChanges} />
+                                <Label for="image">File</Label>
+                                <Input name="image" value={this.state.image} onChange={this.handleChanges} />
                                 {/* <FormText color="muted">
                                     This is some placeholder block-level help text for the above input.
                                     It's a bit lighter and easily wraps to a new line.

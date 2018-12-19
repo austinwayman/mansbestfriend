@@ -1,12 +1,16 @@
 
 .overall{
     width: 350px;
-    height: 400px;
+    height: 450px;
     /* padding: 10px; */
     margin-bottom: 25px;
     
 }
 
+.articleimg{
+    width:350;
+    height: 220px
+}
 .crdColor {
     background-color: #8CCCCB
 }
