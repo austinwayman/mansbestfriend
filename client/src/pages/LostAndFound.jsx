@@ -109,8 +109,8 @@ class Lost extends Component {
                                 </FormText> */}
                             </FormGroup>
                             <FormGroup>
-                                <Label for="contact">Name of Lost Pet</Label>
-                                <Input name="contact" value={this.state.contact} onChange={this.handleChanges} />
+                                <Label for="contact">Contact info</Label>
+                                <Input name="contact" value={this.state.contact} onChange={this.handleChanges} placeholder="John Smith - 555-555-5555"/>
                             </FormGroup>
                         </Form>
                     </ModalBody>
