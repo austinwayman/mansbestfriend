@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import API from "../utils/API";
-import { Button, Modal, Form, FormGroup, Label, ModalHeader, ModalBody, ModalFooter, Input, Container, Row, Col } from 'reactstrap';
-import Card from "../components/PostCards/PostCards";
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Container, Row, Col } from 'reactstrap';
+// import Card from "../components/PostCards/PostCards";
 import Jumbotron2 from "../components/Jumbotron2";
-import axios from 'axios';
+// import axios from 'axios';
 import ArticleCard from "../components/ArticleCard/articleacrd";
 import Footer from "../components/Footer";
 

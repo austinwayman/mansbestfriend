@@ -3,8 +3,8 @@ import { Jumbotron, Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink, Col,
 import "../../src/styles.css";
 import { Animated } from "react-animated-css";
 import { Link } from "react-router-dom";
-import API from '../utils/API';
-import axios from "axios";
+// import API from '../utils/API';
+// import axios from "axios";
 
 
 class Home extends React.Component {
