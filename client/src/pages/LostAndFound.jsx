@@ -3,9 +3,10 @@ import { Button, Modal, Form, FormGroup, Label, ModalHeader, ModalBody, ModalFoo
 import LostDogCard from "../components/LostDogCard/dogCard"
 import LostDogForm from "../components/LostDogForm/LostForm"
 import ThreadAddBtn from "../components/ThreadAddBtn/ThreadAddBtn"
-import API from "../utils/lostAPI";
+import lostAPI from "../utils/lostAPI";
 import Jumbotron2 from "../components/Jumbotron2";
 import Footer from "../components/Footer";
+import ArticleCard from "../components/ArticleCard/articleacrd"
 import "../../src/styles.css";
 
 class Lost extends Component {
@@ -19,6 +20,13 @@ class Lost extends Component {
         contact: ""
     }
 
+    handleChanges = (event) => {
+        const { name, value } = event.target;
+        this.setState({
+            [name]: value
+        });
+    }
+
     componentDidMount() {
         this.getAllLost()
         // this.postNewLost()
@@ -26,7 +34,7 @@ class Lost extends Component {
 
     getAllLost = () => {
         // console.log("Fire")
-        API.getLostAnimals().then(
+        lostAPI.getLostAnimals().then(
             result => this.setState({ list: result.data, modal: false })
         )
         console.log(this.state.list)
@@ -38,7 +46,7 @@ class Lost extends Component {
             name: "Pounce",
             breed: "Tabby"
         }
-        API.postLostAnimal(newPet)
+        lostAPI.postLostAnimal(newPet)
     };
 
     handleFormSubmit = event => {
@@ -53,16 +61,16 @@ class Lost extends Component {
             contact: this.state.contact
         }
 
-        API.postLastAnimal(this.newPost)
+        lostAPI.postLostAnimal(this.newPost)
             .then(res => this.getAllLost())
             .catch(err => console.log(err));
     };
 
-
-
-    constructor(props) {
-        super(props);
-    };
+    toggle = () => {
+        this.setState({
+          modal: !this.state.modal
+        });
+      }
 
 
     render() {
@@ -72,28 +80,29 @@ class Lost extends Component {
                 <Jumbotron2 page={"Lost & Found"} other={"Find or Post a missing loved one"} />
 
 
-                <div classname="d-flex justify-items-center" style={{ textAlign: "center" }}>
-                    <Button outline color="info">Add a Lost or Found Pet</Button>{' '}
+                <div classname="d-flex justify-items-center" style={{ textAlign: "center", padding:"25px" }}>
+                    <Button onClick={this.toggle} outline color="info">Add a Lost or Found Pet</Button>{' '}
                 </div>
-                <Modal isOpen={false}>
+                <Modal isOpen={this.state.modal}>
                     <ModalHeader>Add New Lost Pet</ModalHeader>
                     <ModalBody>
                         <Form>
                             <FormGroup>
                                 <Label for="name">Name of Lost Pet</Label>
-                                <Input name="name" value={this.state.name} placeholder="Scruffy" />
+                                <Input name="name" value={this.state.name}
+                                onChange={this.handleChanges}placeholder="Scruffy" />
                             </FormGroup>
                             <FormGroup>
                                 <Label for="breed">Dog Breed</Label>
-                                <Input name="breed" value={this.state.breed} placeholder="Golden Retreiver" />
+                                <Input name="breed" value={this.state.breed} onChange={this.handleChanges} placeholder="Golden Retreiver" />
                             </FormGroup>
                             <FormGroup>
                                 <Label for="description">Description</Label>
-                                <Input type="textarea" name="description" value={this.state.description} />
+                                <Input type="textarea" name="description" value={this.state.description} onChange={this.handleChanges} />
                             </FormGroup>
                             <FormGroup>
                                 <Label for="file">File</Label>
-                                <Input type="file" name="file" value={this.state.image} />
+                                <Input type="file" name="file" value={this.state.image} onChange={this.handleChanges} />
                                 {/* <FormText color="muted">
                                     This is some placeholder block-level help text for the above input.
                                     It's a bit lighter and easily wraps to a new line.
@@ -101,7 +110,7 @@ class Lost extends Component {
                             </FormGroup>
                             <FormGroup>
                                 <Label for="contact">Name of Lost Pet</Label>
-                                <Input name="contact" value={this.state.contact} />
+                                <Input name="contact" value={this.state.contact} onChange={this.handleChanges} />
                             </FormGroup>
                         </Form>
                     </ModalBody>
@@ -112,16 +121,19 @@ class Lost extends Component {
                 </Modal>
 
                 <Container>
-                    <Col xl="8">
+                    <Row>
+
                         {
                             this.state.list.map(post => {
                                 return (
-                                    <LostDogCard name={post.name} breed={post.breed} description={post.description} image={post.image} contact={post.contact}/>
+                                    <Col>
+                                    <ArticleCard title={post.name} breed={post.breed} summary={post.description} image={post.image} contact={post.contact}/>
+                                    </Col>
                                 )
                             })
 
                         }
-                    </Col>
+                    </Row>
                 </Container>
 
 
