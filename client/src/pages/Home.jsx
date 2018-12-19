@@ -3,6 +3,8 @@ import { Jumbotron, Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink, Col,
 import "../../src/styles.css";
 import { Animated } from "react-animated-css";
 import { Link } from "react-router-dom";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; //
 // import API from '../utils/API';
 // import axios from "axios";
 
@@ -10,6 +12,7 @@ import { Link } from "react-router-dom";
 class Home extends React.Component {
   constructor(props) {
     super(props);
+    AOS.init();
 
     this.toggle = this.toggle.bind(this);
     this.state = {
@@ -88,7 +91,7 @@ class Home extends React.Component {
 
         {/* Start of Purpose */}
         <div className="purposeContainer">
-          <Animated animationIn="fadeInLeft" isVisible={true}>
+          <div data-aos="fade-right" data-aos-duration="2000">
             <Container>
               <Row>
                 <Col m="4" xl="4">
@@ -99,7 +102,7 @@ class Home extends React.Component {
                 <Col m="8" xl="8"><img src="/images/cat.png" alt="petimage" width="100%"></img></Col>
               </Row>
             </Container>
-          </Animated>
+          </div>
         </div>
         {/* End of Purpose */}
 
