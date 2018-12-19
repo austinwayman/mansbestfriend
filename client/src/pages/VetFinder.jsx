@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import Jumbotron2 from "../components/Jumbotron2";
 import VetFinderCard from "../components/VetFinderCard";
 import { Collection } from "mongoose";
-import Footer from "../components/Footer";
+// import Footer from "../components/Footer";
 
-import { Button, Modal, Form, FormGroup, Label, ModalHeader, ModalBody, ModalFooter, Input, Container, Row, Col } from 'reactstrap';
+import { Button, Form, FormGroup, Input, Container, Row, Col } from 'reactstrap';
 import API from "../utils/API";
 
 
@@ -47,7 +47,7 @@ class VetFinder extends Component {
                 <Container>
                     <Row> 
                     <Col sm="2">
-                    <Form>
+                    <Form className="vetFinderForm">
                         <FormGroup>
                             <Input
                                 name="search"

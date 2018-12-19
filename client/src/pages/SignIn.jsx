@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Button, Modal, Form, FormGroup, Label, ModalHeader, ModalBody, ModalFooter, Input, Container, Row, Col } from 'reactstrap';
 import API from "../utils/API";
 import axios from "axios";
+import "../../src/styles.css";
 
 
 
@@ -75,10 +76,10 @@ class SignUpIn extends Component {
     render() {
         return (
 
-
+            <div className="signInBack">
             <Container>
 
-                <Form>
+                <Form className="signInBox">
                     <FormGroup>
                         <Label for="exampleEmail">UserName</Label>
                         <Input type="username"
@@ -97,17 +98,18 @@ class SignUpIn extends Component {
                             placeholder="password" />
                     </FormGroup>
 
-                    <Button color="primary" onClick={this.handleSignUp}> Sign Up</Button>
+                    <Button className="btnSpace2" color="primary" onClick={this.handleSignUp}> Sign Up</Button>
 
-                    <Button color="primary" onClick={this.handleLogin}
+                    <Button className="btnSpace2" color="primary" onClick={this.handleLogin}
                     > Login</Button>
 
-                    <Button color="primary" onClick={this.handlelogOut}
+                    <Button className="btnSpace2" color="primary" onClick={this.handlelogOut}
                     > Logout</Button>
 
                 </Form>
 
             </Container>
+            </div>
 
 
 
