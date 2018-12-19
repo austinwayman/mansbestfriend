@@ -17,3 +17,7 @@
 .displayOff{
     display:none
 }
+
+.new1{
+    border-top: 1px dashed black;
+}

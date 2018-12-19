@@ -3,6 +3,8 @@ import API from "../../utils/API";
 import Posting from "../../components/Posting/posting"
 import CommentCard from "../../components/CommentCard/commentcard"
 import Input from "../../components/Input/Input"
+import Jumbotron2 from "../../components/Jumbotron2/index"
+import Footer from "../../components/Footer/index"
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import Axios from "axios";
 import "./posting.css"
@@ -16,6 +18,10 @@ class Post extends Component {
     modalID: "",
     route: ""
   }
+
+  Capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}
 
   componentWillMount() {
     this.getPost()
@@ -94,6 +100,9 @@ class Post extends Component {
     return (
 
       <div>
+
+<Jumbotron2 page={"Thread"} other={"Know and ask!"}>
+                    </Jumbotron2>
 
         <div className="container cont">
 
@@ -227,6 +236,7 @@ class Post extends Component {
         </Modal>
 
 
+            <Footer />
 
       </div>
 

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Button, Modal, Form, FormGroup, Label, ModalHeader, ModalBody, ModalFooter, Input, Container, Row, Col } from 'reactstrap';
 import API from "../utils/API";
-import axios from "axios"; 
+import axios from "axios";
 
 
 
@@ -40,7 +40,7 @@ class SignUpIn extends Component {
         API.signUp(obj).then(res => this.props.history.push("/"))
     }
 
-    handleLogin = () =>{
+    handleLogin = () => {
 
         const obj = {
             email: this.state.username,
@@ -54,10 +54,20 @@ class SignUpIn extends Component {
 
             localStorage.setItem("userToken", res.data.token)
 
-        
+
             this.props.history.push("/")
         })
 
+    }
+
+    handlelogOut = () => {
+
+        axios.defaults.headers.common['authorization'] = "";
+        localStorage.removeItem("userToken")
+  
+        this.props.history.push("/")
+  
+  
     }
 
 
@@ -65,31 +75,40 @@ class SignUpIn extends Component {
     render() {
         return (
 
-            <Form>
-                <FormGroup>
-                    <Label for="exampleEmail">UserName</Label>
-                    <Input type="username"
-                        name="username"
-                        value={this.state.username}
-                        onChange={this.handleusername}
-                        placeholder="Username"
-                    />
-                </FormGroup>
-                <FormGroup>
-                    <Label for="examplePassword">Password</Label>
-                    <Input type="password"
-                        name="password"
-                        value={this.state.password}
-                        onChange={this.handlepassword}
-                        placeholder="password" />
-                </FormGroup>
 
-                <Button color="primary" onClick={this.handleSignUp}> Sign Up</Button>
+            <Container>
 
-                <Button color="primary" onClick={this.handleLogin}
-                > Login</Button>
+                <Form>
+                    <FormGroup>
+                        <Label for="exampleEmail">UserName</Label>
+                        <Input type="username"
+                            name="username"
+                            value={this.state.username}
+                            onChange={this.handleusername}
+                            placeholder="Username"
+                        />
+                    </FormGroup>
+                    <FormGroup>
+                        <Label for="examplePassword">Password</Label>
+                        <Input type="password"
+                            name="password"
+                            value={this.state.password}
+                            onChange={this.handlepassword}
+                            placeholder="password" />
+                    </FormGroup>
 
-            </Form>
+                    <Button color="primary" onClick={this.handleSignUp}> Sign Up</Button>
+
+                    <Button color="primary" onClick={this.handleLogin}
+                    > Login</Button>
+
+                    <Button color="primary" onClick={this.handlelogOut}
+                    > Logout</Button>
+
+                </Form>
+
+            </Container>
+
 
 
         )
