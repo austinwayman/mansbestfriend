@@ -6,7 +6,7 @@ import Input from "../../components/Input/Input"
 import Jumbotron2 from "../../components/Jumbotron2/index"
 import Footer from "../../components/Footer/index"
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import Axios from "axios";
+// import Axios from "axios";
 import "./posting.css"
 
 class Post extends Component {
