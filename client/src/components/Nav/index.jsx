@@ -27,7 +27,7 @@ function Nav2() {
           </NavItem>
 
           <NavItem>
-            <NavLink tag={Link} to="/LostAndFound/">Lost/Found</NavLink>
+            <NavLink tag={Link} to="/LostAndFound/">Lost Animals</NavLink>
           </NavItem>
 
           <NavItem>
