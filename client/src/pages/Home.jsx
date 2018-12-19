@@ -51,7 +51,7 @@ class Home extends React.Component {
                 <Nav className="ml-auto" navbar>
 
                   <NavItem>
-                    <NavLink to="/Forum">Forum</NavLink>
+                    <NavLink tag={Link} to="/Forum/">Forum</NavLink>
                   </NavItem>
 
                   <NavItem>
