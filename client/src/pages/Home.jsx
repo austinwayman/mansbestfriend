@@ -64,7 +64,7 @@ class Home extends React.Component {
                   </NavItem>
 
                   <NavItem>
-                    <NavLink tag={Link} to="/LostAndFound/">Lost/Found</NavLink>
+                    <NavLink tag={Link} to="/LostAndFound/">Lost Animals</NavLink>
                   </NavItem>
 
                   <NavItem>
@@ -96,8 +96,8 @@ class Home extends React.Component {
               <Row>
                 <Col m="4" xl="4">
                   <h1>Purpose</h1>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum eaque totam dolore necessitatibus voluptatem provident repellendus porro tempore libero pariatur ratione fugiat minima officia unde architecto, impedit quasi corrupti dicta?</p>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi et maiores cupiditate perferendis quo, molestiae laborum. Consequuntur laboriosam architecto, itaque nesciunt quam dignissimos sit eius, adipisci harum quaerat ipsam quibusdam!</p>
+                  <p>MyBestFriend is an online community designed to give informational support for those caring for pets. Many members have experienced what it's like to bring a furry best friend home for the first time. We understand that many unknown's are ahead for a new pet owner. Our community knows what it is like to have a pet show unusual signs of sickness or behavioral problems. </p>
+                  <p>Many have found their lost pet utilizing our site as well. Make sure to register to join the community and actively participate in the forum discussions. We openly welcome you to our online pet-parenthood neighborhood!</p>
                 </Col>
                 <Col m="8" xl="8"><img src="/images/cat.png" alt="petimage" width="100%"></img></Col>
               </Row>

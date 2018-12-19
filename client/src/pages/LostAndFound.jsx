@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Button, Modal, Form, FormGroup, Label, ModalHeader, ModalBody, ModalFooter, Input, Container, Row, Col } from 'reactstrap';
-import LostDogCard from "../components/LostDogCard/dogCard"
-import LostDogForm from "../components/LostDogForm/LostForm"
-import ThreadAddBtn from "../components/ThreadAddBtn/ThreadAddBtn"
+import LostDogCard from "../components/LostDogCard/dogCard";
+import LostDogForm from "../components/LostDogForm/LostForm";
+import ThreadAddBtn from "../components/ThreadAddBtn/ThreadAddBtn";
 import lostAPI from "../utils/lostAPI";
 import Jumbotron2 from "../components/Jumbotron2";
 import Footer from "../components/Footer";
@@ -77,11 +77,11 @@ class Lost extends Component {
         console.log(this.state.list)
         return (
             <div>
-                <Jumbotron2 page={"Lost & Found"} other={"Find or Post a missing loved one"} />
+                <Jumbotron2 page={"Lost Animals"} other={"Find your missing loved one"} />
 
 
                 <div classname="d-flex justify-items-center" style={{ textAlign: "center", padding:"25px" }}>
-                    <Button onClick={this.toggle} outline color="info">Add a Lost or Found Pet</Button>{' '}
+                    <Button onClick={this.toggle} outline color="info">Add a Lost Pet</Button>{' '}
                 </div>
                 <Modal isOpen={this.state.modal}>
                     <ModalHeader>Add New Lost Pet</ModalHeader>
@@ -93,8 +93,8 @@ class Lost extends Component {
                                 onChange={this.handleChanges}placeholder="Scruffy" />
                             </FormGroup>
                             <FormGroup>
-                                <Label for="breed">Dog Breed</Label>
-                                <Input name="breed" value={this.state.breed} onChange={this.handleChanges} placeholder="Golden Retreiver" />
+                                <Label for="breed">Dog/Cat Breed</Label>
+                                <Input name="breed" value={this.state.breed} onChange={this.handleChanges} placeholder="Golden Retreiver/Tabby" />
                             </FormGroup>
                             <FormGroup>
                                 <Label for="description">Description</Label>

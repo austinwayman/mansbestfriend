@@ -15,7 +15,7 @@ class ForumPage extends Component {
         return (
             <div>
                 {/* Jumbotron Start */}
-                <Jumbotron2 page="Forum" other="This is the forum." />
+                <Jumbotron2 page="Forum" other="Ask the community" />
                 {/* Jumbotron End */}
 
 
