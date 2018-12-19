@@ -31,7 +31,7 @@ function Nav2() {
           </NavItem>
 
           <NavItem>
-            <NavLink tag={Link} to="#">Sign Up/Login</NavLink>
+            <NavLink tag={Link} to="/login-sign">Sign Up/Login</NavLink>
           </NavItem>
 
         </Nav>
